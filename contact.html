@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="computing school and computer courses school in western kenya"
+    />
+    <title>HALCHIQ CAR RENTALS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --bg: #ceb07c;
+        --ink: #0f1220;
+        --muted: rgba(15, 18, 32, 0.72);
+        --muted2: rgba(15, 18, 32, 0.6);
+        --line: rgba(15, 18, 32, 0.18);
+        --field: #f2eadf;
+        --fieldLine: rgba(25, 92, 63, 0.55);
+        --accent: #a3b108;
+        --max: 1150px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          "Noto Sans",
+          "Helvetica Neue",
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      /* ---------- Section layout ---------- */
+      .contact {
+        padding: 48px 18px 70px;
+        min-height: 100vh;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 10px 0 6px;
+        text-align: center;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        font-size: clamp(44px, 5vw, 74px);
+        color: #014805;
+        padding-top: 20px;
+      }
+
+      .intro {
+        margin: 14px auto 0;
+        max-width: 620px;
+        text-align: center;
+        color: rgb(1, 23, 53);
+        font-size: 15px;
+        line-height: 1.7;
+        font-weight: 600;
+      }
+
+      .grid {
+        margin-top: 62px;
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        gap: 70px;
+        align-items: start;
+      }
+
+      /* ---------- Left column ---------- */
+      .info {
+        padding-left: 18px;
+      }
+
+      .block {
+        margin-bottom: 34px;
+      }
+      .block h3 {
+        margin: 0 0 10px;
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        color: rgb(1, 23, 53);
+      }
+
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 8px 0;
+      }
+
+      .ico {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+        margin-top: 2px;
+        color: #0f1220;
+        opacity: 0.9;
+      }
+
+      .fine-link {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        color: rgba(15, 18, 32, 0.78);
+        font-size: 11px;
+        letter-spacing: 0.2px;
+        text-decoration: none;
+        margin-top: 4px;
+      }
+      .fine-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- Form ---------- */
+      form {
+        padding-right: 18px;
+      }
+
+      .field {
+        margin-bottom: 18px;
+      }
+
+      label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(15, 18, 32, 0.86);
+        margin-bottom: 8px;
+      }
+
+      .req {
+        color: #b43232;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        background: var(--field);
+        border: 1px solid var(--fieldLine);
+        border-radius: 0;
+        padding: 10px 12px;
+        font-size: 13px;
+        outline: none;
+        color: #0f1220;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        box-shadow: 0 0 0 3px rgba(25, 92, 63, 0.1);
+      }
+
+      select {
+        appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, rgba(15, 18, 32, 0.55) 50%),
+          linear-gradient(135deg, rgba(15, 18, 32, 0.55) 50%, transparent 50%);
+        background-position:
+          calc(100% - 18px) 52%,
+          calc(100% - 12px) 52%;
+        background-size:
+          6px 6px,
+          6px 6px;
+        background-repeat: no-repeat;
+        padding-right: 34px;
+      }
+
+      textarea {
+        min-height: 128px;
+        resize: vertical;
+      }
+
+      /* ---------- Fake reCAPTCHA (visual only) ---------- */
+      .captcha {
+        width: 305px;
+        max-width: 100%;
+        background: #fff;
+        border: 1px solid rgba(15, 18, 32, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 14px;
+        margin: 12px 0 16px;
+        gap: 12px;
+      }
+
+      .cap-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgba(15, 18, 32, 0.8);
+        font-size: 13px;
+      }
+
+      .cap-box {
+        width: 22px;
+        height: 22px;
+        border: 1px solid rgba(15, 18, 32, 0.35);
+        background: #fff;
+      }
+
+      .cap-right {
+        text-align: right;
+        font-size: 10px;
+        color: rgba(15, 18, 32, 0.55);
+        line-height: 1.1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3px;
+      }
+
+      .cap-logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        background: #f3f3f3;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        font-weight: 800;
+        color: rgba(15, 18, 32, 0.65);
+        margin-bottom: 2px;
+      }
+
+      /* ---------- Submit button ---------- */
+      .btn {
+        width: 220px;
+        max-width: 100%;
+        border: none;
+        background: var(--accent);
+        color: rgba(15, 18, 32, 0.88);
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        padding: 12px 14px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6px;
+      }
+      .btn:hover {
+        filter: brightness(0.98);
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .triple-images {
+        background: #f4eee3; /* same soft cream tone */
+        padding: 18px;
+      }
+
+      .triple-wrap {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      /* Image container */
+      .img-box {
+        width: 100%;
+        height: 420px; /* adjust height to match your design */
+        overflow: hidden;
+        border-radius: 2px;
+      }
+
+      /* Image */
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      /* make sure nav can show dropdown */
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+
+      /* wrapper */
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* trigger */
+      .nav-dropbtn {
+        cursor: pointer;
+      }
+      .nav-caret {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-left: 6px;
+      }
+
+      /* panel */
+      .nav-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 10px;
+        display: none;
+        z-index: 9999;
+      }
+
+      /* show */
+      .nav-dropdown.is-open .nav-dropdown-panel {
+        display: block;
+      }
+
+      /* pointer triangle */
+      .nav-dropdown-panel::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      /* items */
+      .nav-dd-item {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(15, 27, 20, 0.88);
+        font-weight: 650;
+        font-size: 13px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .nav-dd-item:hover {
+        background: rgba(185, 227, 61, 0.22);
+      }
+      .nav-dd-item.is-active {
+        background: #b9e33d;
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 800;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .info,
+        form {
+          padding: 0;
+        }
+        .triple-wrap {
+          grid-template-columns: 1fr;
+        }
+        .img-box {
+          height: 300px;
+        }
+      }
+      /* ===========================
+   CONTACT V2 (Overrides Only)
+   Add this BELOW your current CSS
+   =========================== */
+
+.contact.contact-v2 {
+  padding: 56px 18px 70px;
+}
+
+.contact-v2 .contact-grid {
+  margin-top: 46px;
+  gap: 34px;
+}
+
+/* Shared card styling */
+.contact-v2 .info-card,
+.contact-v2 .form-card {
+  background: rgba(244, 238, 227, 0.92);
+  border: 1px solid rgba(15, 18, 32, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 18, 32, 0.08);
+}
+
+.contact-v2 .info-card-inner,
+.contact-v2 .form-card-inner {
+  padding: 22px;
+}
+
+/* LEFT column polish */
+.contact-v2 .block {
+  margin: 0 0 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(15, 18, 32, 0.08);
+}
+
+.contact-v2 .block h3 {
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(1, 23, 53, 0.94);
+}
+
+.contact-v2 .row {
+  margin: 10px 0 0;
+  color: rgba(15, 18, 32, 0.78);
+  font-size: 13px;
+}
+
+.contact-v2 .ico {
+  width: 34px;
+  height: 34px;
+  margin-top: 1px;
+  border-radius: 10px;
+  padding: 7px;
+  background: rgba(163, 177, 8, 0.16);
+  border: 1px solid rgba(15, 18, 32, 0.1);
+}
+
+.contact-v2 .info-link {
+  color: rgba(1, 23, 53, 0.95);
+  font-weight: 900;
+  text-decoration: none;
+}
+.contact-v2 .info-link:hover {
+  text-decoration: underline;
+}
+
+.contact-v2 .info-note {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(1, 72, 5, 0.08);
+  border: 1px solid rgba(1, 72, 5, 0.14);
+}
+.contact-v2 .info-note-title {
+  font-weight: 900;
+  color: rgba(1, 23, 53, 0.95);
+  margin-bottom: 6px;
+}
+.contact-v2 .info-note-text {
+  color: rgba(15, 18, 32, 0.78);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* RIGHT column (form) */
+.contact-v2 .form-head h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 950;
+  color: rgba(1, 23, 53, 0.96);
+}
+.contact-v2 .form-head p {
+  margin: 8px 0 16px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(15, 18, 32, 0.72);
+}
+
+.contact-v2 .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact-v2 label {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+/* Form inputs look modern */
+.contact-v2 input,
+.contact-v2 select,
+.contact-v2 textarea {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 18, 32, 0.16);
+  border-radius: 12px;
+  padding: 12px 12px;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.contact-v2 input:focus,
+.contact-v2 select:focus,
+.contact-v2 textarea:focus {
+  border-color: rgba(1, 72, 5, 0.45);
+  box-shadow: 0 0 0 4px rgba(25, 92, 63, 0.12);
+}
+
+.contact-v2 textarea {
+  min-height: 145px;
+}
+
+/* Custom select caret */
+.contact-v2 .select-wrap {
+  position: relative;
+}
+.contact-v2 .select-wrap select {
+  appearance: none;
+  padding-right: 42px;
+}
+.contact-v2 .select-caret {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Button upgrade (keeps your accent color) */
+.contact-v2 .btn-primary {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(163, 177, 8, 1), rgba(185, 227, 61, 1));
+  color: rgba(7, 35, 25, 0.96);
+  font-weight: 1000;
+  letter-spacing: 0.9px;
+  gap: 10px;
+  box-shadow: 0 14px 26px rgba(15, 18, 32, 0.14);
+  transition: transform 0.12s ease, filter 0.15s ease;
+}
+.contact-v2 .btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+.contact-v2 .btn-primary:active {
+  transform: translateY(0px);
+}
+
+.contact-v2 .form-footnote {
+  margin: 12px 0 0;
+  font-size: 11px;
+  color: rgba(15, 18, 32, 0.62);
+}
+
+/* Triple images polish */
+.triple-images .img-box {
+  border-radius: 18px;
+  border: 1px solid rgba(15, 18, 32, 0.12);
+  box-shadow: 0 16px 34px rgba(15, 18, 32, 0.08);
+}
+.triple-images .img-box img {
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+.triple-images .img-box:hover img {
+  transform: scale(1.07);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .contact-v2 .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+   <header class="navBar" id="navBar">
+  <div class="navSection">
+    <!-- Brand (Logo + Name) -->
+    <div class="navBrand">
+      <a href="#" class="brandLink">
+        <img class="brandLogo" src="images/logo.jpeg" alt="KYIFA Logo" />
+        <span class="brandText">
+          <span class="brandTop">Kaloyebei Youth</span>
+          <span class="brandBottom">Integrated Farmers</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Links (DESKTOP) -->
+    <div class="navLinks">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link has-dropdown is-active" href="index.html">Home</a>
+        <a class="nav-link has-dropdown" href="about.html">About Us</a>
+
+        <div class="nav-dropdown" id="servicesMenu">
+          <a
+            class="nav-link has-dropdown nav-dropbtn"
+            href="javascript:void(0)"
+          >
+            Projects <span class="nav-caret">▾</span>
+          </a>
+
+          <div class="nav-dropdown-panel" role="menu" aria-label="Projects menu">
+            <a
+              class="nav-dd-item is-active"
+              href="services.html#service-organic"
+              role="menuitem"
+              >Agriculture & Livelihood Development</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-digital"
+              role="menuitem"
+              >Environmental protection & Eco System Restoration</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-agritech"
+              role="menuitem"
+              >Water Sanitation & Hygiene</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-eco"
+              role="menuitem"
+              >WaterShed Management and Sanitation</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-produce"
+              role="menuitem"
+              >Gender Empowerement</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-emer"
+              role="menuitem"
+              >Humanitarian Emergency Response</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-sport"
+              role="menuitem"
+              >Sports and Cultural activities</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-peace"
+              role="menuitem"
+              >Peace Building and Conflict Mitigation</a
+            >
+          </div>
+        </div>
+
+        <a class="nav-link has-dropdown" href="gallery.html">Gallery</a>
+        <a class="nav-link has-dropdown" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Right actions -->
+    <div class="navActions">
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="icon-btn navToggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <!-- Hamburger icon -->
+        <svg
+          class="icon-hamburger"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <!-- Close (X) icon -->
+        <svg
+          class="icon-close"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Existing search -->
+      <div class="search-wrap">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Search"
+          aria-expanded="false"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm11 3-6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search..." aria-label="Search input" />
+        </div>
+      </div>
+
+      <!-- Existing CTA -->
+      <a href="#" class="cta-btn">
+        Get In Touch <span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <nav class="mobileNav" aria-label="Mobile navigation">
+      <!-- Add .is-active on the current page if you want -->
+      <a class="mobileLink is-active" href="index.html">Home</a>
+      <a class="mobileLink" href="about.html">About Us</a>
+
+      <!-- Projects accordion -->
+      <button
+        class="mobileDropBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileProjectsPanel"
+      >
+        Projects <span class="nav-caret">▾</span>
+      </button>
+
+      <div class="mobileDropPanel" id="mobileProjectsPanel" hidden>
+        <a class="mobileLink" href="services.html#service-organic"
+          >Agriculture & Livelihood Development</a
+        >
+        <a class="mobileLink" href="services.html#service-digital"
+          >Environmental protection & Eco System Restoration</a
+        >
+        <a class="mobileLink" href="services.html#service-agritech"
+          >Water Sanitation & Hygiene</a
+        >
+        <a class="mobileLink" href="services.html#service-eco"
+          >WaterShed Management and Sanitation</a
+        >
+        <a class="mobileLink" href="services.html#service-produce"
+          >Gender Empowerement</a
+        >
+        <a class="mobileLink" href="services.html#service-emer"
+          >Humanitarian Emergency Response</a
+        >
+        <a class="mobileLink" href="services.html#service-sport"
+          >Sports and Cultural activities</a
+        >
+        <a class="mobileLink" href="services.html#service-peace"
+          >Peace Building and Conflict Mitigation</a
+        >
+      </div>
+
+      <a class="mobileLink" href="gallery.html">Gallery</a>
+      <a class="mobileLink" href="contact.html">Contact</a>
+
+      <a class="mobileCta" href="contact.html">
+        Get In Touch <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+    </header>
+    <section class="contact contact-v2">
+  <div class="wrap">
+    <h1>Contact</h1>
+
+    <div class="intro">
+      <div>
+        Please use the contact form below to connect to the best person for your
+        questions/ideas.
+      </div>
+      <div>
+        If you need to contact us by email, please allow 2-3 business days for a
+        response.
+      </div>
+      <div>
+        Our phone lines are not staffed, so please leave us a text or voicemail.
+      </div>
+    </div>
+
+    <div class="grid contact-grid">
+      <!-- LEFT -->
+      <div class="info info-card">
+        <div class="info-card-inner">
+          <div class="block">
+            <h3>MAIL</h3>
+            <div class="row">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" />
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <div>P.O Box 30500, TURKANA COUNTY</div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>OFFICE</h3>
+
+            <div class="row">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              <div>KALOBEYEI Turkana West Constituency, TURKANA.</div>
+            </div>
+
+            <div class="row">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M6 3h4l2 6-3 2c1 3 3 5 6 6l2-3 6 2v4c0 1-1 2-2 2C10 22 2 14 2 4c0-1 1-2 2-2h2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div><a class="info-link" href="tel:+254707841370">+254 707 841 370 / + 254 718 371 996</a></div>
+            </div>
+
+            <div class="row">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 1 0 10 10"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <div>
+                <a class="info-link" href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>FARM</h3>
+            <div class="row">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 21V10l8-6 8 6v11" stroke="currentColor" stroke-width="2" />
+                <path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <div>
+                P.O Box 01-30501 Kakuma, Turkana County, Turkana West Constituency, Kaloyebei<br />
+                <a class="fine-link" href="#" onclick="return false;">
+                  ›&nbsp; ACCESS, PARKING &amp; DETAILS
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-note">
+            <div class="info-note-title">Quick note</div>
+            <div class="info-note-text">
+              For faster support, include your phone number and the reason you’re reaching out.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <form id="contactForm" class="form-card">
+        <div class="form-card-inner">
+          <div class="form-head">
+            <h2>Send us a message</h2>
+            <p>Fill the form and we’ll respond as soon as possible.</p>
+          </div>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="name">Name <span class="req">*</span></label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="interest">I am interested in <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="interest" name="interest" required>
+                <option value="" selected disabled>Select an option</option>
+                <option>Visit Our Farm</option>
+                <option>Donations</option>
+                <option>Farm Tours</option>
+                <option>Partnerships</option>
+                <option>General Question</option>
+              </select>
+              <span class="select-caret" aria-hidden="true">▾</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Comment or Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <div class="captcha" aria-label="reCAPTCHA placeholder">
+            <div class="cap-left">
+              <div class="cap-box" aria-hidden="true"></div>
+              <div>I'm not a robot</div>
+            </div>
+            <div class="cap-right">
+              <div class="cap-logo" aria-hidden="true">re</div>
+              <div>reCAPTCHA</div>
+              <div>Privacy - Terms</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            SUBMIT <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="form-footnote">
+            Please allow 2–3 business days for a response.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section> 
+
+    <section class="triple-images">
+      <div class="triple-wrap">
+        <!-- LEFT IMAGE -->
+        <div class="img-box">
+          <img
+            src="images/005.jpg"
+            alt="Farming image"
+          />
+        </div>
+
+        <!-- MIDDLE IMAGE -->
+        <div class="img-box">
+          <img
+            src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80"
+            alt="Vegetables image"
+          />
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="img-box">
+          <img
+            src="images/009.jpg"
+            alt="People farming image"
+          />
+        </div>
+      </div>
+    </section>
+  <footer class="ag-footer" id="agFooter">
+  <!-- Background image (overlayed) -->
+  <div
+    class="ag-footer-bg"
+    style="background-image: url('images/002.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <div class="ag-footer-overlay" aria-hidden="true"></div>
+
+  <div class="ag-footer-wrap">
+    <div class="ag-footer-grid">
+      <!-- LEFT -->
+      <div class="ag-footer-col ag-footer-brand">
+        <div class="ag-footer-logo">
+          <span class="ag-footer-logo-icon">🌿</span>
+          <span class="ag-footer-logo-text">KYIFA</span>
+        </div>
+
+        <div class="ag-footer-contact">
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✳</span>
+            <a href="tel:+254707841370">+254 707 841 370</a>
+          </div>
+
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✉</span>
+            <a href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="ag-footer-quick">
+          <a
+            class="ag-quick-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="ag-quick-ico" aria-hidden="true">💬</span> WhatsApp Us
+          </a>
+
+          <a
+            class="ag-quick-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+          >
+            <span class="ag-quick-ico" aria-hidden="true">✉</span> Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Our Services
+        </h3>
+
+        <ul class="ag-footer-links">
+          <li>
+            <a href="services.html#service-organic"
+              ><span class="ag-link-arrow">↗</span> Agriculture &amp; Livelihood Development</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-digital"
+              ><span class="ag-link-arrow">↗</span> Environmental Protection &amp; Ecosystem Restoration</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-agritech"
+              ><span class="ag-link-arrow">↗</span> Water, Sanitation &amp; Hygiene</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-eco"
+              ><span class="ag-link-arrow">↗</span> Watershed Management &amp; Sanitation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-emer"
+              ><span class="ag-link-arrow">↗</span> Humanitarian Emergency Response</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-peace"
+              ><span class="ag-link-arrow">↗</span> Peace Building &amp; Conflict Mitigation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-sport"
+              ><span class="ag-link-arrow">↗</span> Sports &amp; Cultural Activities</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-produce"
+              ><span class="ag-link-arrow">↗</span> Gender Empowerment</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Sign up to our newsletter
+        </h3>
+
+        <form class="ag-newsletter" onsubmit="return false;">
+          <input class="ag-news-input" type="email" placeholder="Email Address" required />
+          <button class="ag-news-btn" type="submit" aria-label="Send">✈</button>
+        </form>
+
+        <p class="ag-footer-note">
+          Rooted in nature’s care, we grow with integrity, nurture every seed with love,
+          and build stronger, healthier communities in Kalobeyei.
+        </p>
+
+        <div class="ag-social">
+          <!-- WhatsApp -->
+          <a
+            class="ag-social-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+
+          <!-- Email -->
+          <a
+            class="ag-social-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+
+          <!-- Replace these with your real links -->
+          <a
+            class="ag-social-btn"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="ag-social-hint">
+          Tap an icon to message us, email us, or view our pages.
+        </p>
+      </div>
+    </div>
+
+    <div class="ag-footer-divider"></div>
+
+    <div class="ag-footer-bottom">
+      <p>
+        © Copyright 2026. All rights reserved. <span>KYIFA</span>.
+        Designed by <span>CHRIMOTECH</span>
+      </p>
+    </div>
+  </div>
+
+  <button class="ag-to-top" id="agToTop" aria-label="Back to top">↑</button>
+</footer>
+
+    <script src="script.js"></script>
+
+    <script>
+      // Demo only: prevent page reload
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Form submitted (demo). Connect this to your backend/email service.",
+          );
+        });
+    </script>
+  </body>
+</html>

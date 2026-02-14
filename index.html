@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="computing school and computer courses school in western kenya"
+    />
+    <title>HALCHIQ CAR RENTALS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* make sure nav can show dropdown */
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+
+      /* wrapper */
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* trigger */
+      .nav-dropbtn {
+        cursor: pointer;
+      }
+      .nav-caret {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-left: 6px;
+      }
+
+      /* panel */
+      .nav-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 10px;
+        display: none;
+        z-index: 9999;
+      }
+
+      /* show */
+      .nav-dropdown.is-open .nav-dropdown-panel {
+        display: block;
+      }
+
+      /* pointer triangle */
+      .nav-dropdown-panel::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      /* items */
+      .nav-dd-item {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(15, 27, 20, 0.88);
+        font-weight: 650;
+        font-size: 13px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .nav-dd-item:hover {
+        background: rgba(185, 227, 61, 0.22);
+      }
+      .nav-dd-item.is-active {
+        background: #b9e33d;
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 800;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+ <!-- ===================== NAVBAR (FINAL HTML) ===================== -->
+<header class="navBar" id="navBar">
+  <div class="navSection">
+    <!-- Brand (Logo + Name) -->
+    <div class="navBrand">
+      <a href="#" class="brandLink">
+        <img class="brandLogo" src="images/logo.jpeg" alt="KYIFA Logo" />
+        <span class="brandText">
+          <span class="brandTop">Kaloyebei Youth</span>
+          <span class="brandBottom">Integrated Farmers</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Links (DESKTOP) -->
+    <div class="navLinks">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link has-dropdown is-active" href="index.html">Home</a>
+        <a class="nav-link has-dropdown" href="about.html">About Us</a>
+
+        <div class="nav-dropdown" id="servicesMenu">
+          <a
+            class="nav-link has-dropdown nav-dropbtn"
+            href="javascript:void(0)"
+          >
+            Projects <span class="nav-caret">▾</span>
+          </a>
+
+          <div class="nav-dropdown-panel" role="menu" aria-label="Projects menu">
+            <a
+              class="nav-dd-item is-active"
+              href="services.html#service-organic"
+              role="menuitem"
+              >Agriculture & Livelihood Development</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-digital"
+              role="menuitem"
+              >Environmental protection & Eco System Restoration</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-agritech"
+              role="menuitem"
+              >Water Sanitation & Hygiene</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-eco"
+              role="menuitem"
+              >WaterShed Management and Sanitation</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-produce"
+              role="menuitem"
+              >Gender Empowerement</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-emer"
+              role="menuitem"
+              >Humanitarian Emergency Response</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-sport"
+              role="menuitem"
+              >Sports and Cultural activities</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-peace"
+              role="menuitem"
+              >Peace Building and Conflict Mitigation</a
+            >
+          </div>
+        </div>
+
+        <a class="nav-link has-dropdown" href="gallery.html">Gallery</a>
+        <a class="nav-link has-dropdown" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Right actions -->
+    <div class="navActions">
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="icon-btn navToggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <!-- Hamburger icon -->
+        <svg
+          class="icon-hamburger"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <!-- Close (X) icon -->
+        <svg
+          class="icon-close"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Existing search -->
+      <div class="search-wrap">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Search"
+          aria-expanded="false"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm11 3-6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search..." aria-label="Search input" />
+        </div>
+      </div>
+
+      <!-- Existing CTA -->
+      <a href="#" class="cta-btn">
+        Get In Touch <span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <nav class="mobileNav" aria-label="Mobile navigation">
+      <!-- Add .is-active on the current page if you want -->
+      <a class="mobileLink is-active" href="index.html">Home</a>
+      <a class="mobileLink" href="about.html">About Us</a>
+
+      <!-- Projects accordion -->
+      <button
+        class="mobileDropBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileProjectsPanel"
+      >
+        Projects <span class="nav-caret">▾</span>
+      </button>
+
+      <div class="mobileDropPanel" id="mobileProjectsPanel" hidden>
+        <a class="mobileLink" href="services.html#service-organic"
+          >Agriculture & Livelihood Development</a
+        >
+        <a class="mobileLink" href="services.html#service-digital"
+          >Environmental protection & Eco System Restoration</a
+        >
+        <a class="mobileLink" href="services.html#service-agritech"
+          >Water Sanitation & Hygiene</a
+        >
+        <a class="mobileLink" href="services.html#service-eco"
+          >WaterShed Management and Sanitation</a
+        >
+        <a class="mobileLink" href="services.html#service-produce"
+          >Gender Empowerement</a
+        >
+        <a class="mobileLink" href="services.html#service-emer"
+          >Humanitarian Emergency Response</a
+        >
+        <a class="mobileLink" href="services.html#service-sport"
+          >Sports and Cultural activities</a
+        >
+        <a class="mobileLink" href="services.html#service-peace"
+          >Peace Building and Conflict Mitigation</a
+        >
+      </div>
+
+      <a class="mobileLink" href="gallery.html">Gallery</a>
+      <a class="mobileLink" href="contact.html">Contact</a>
+
+      <a class="mobileCta" href="contact.html">
+        Get In Touch <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="home">
+        <!-- animated decorative leaves -->
+        <span class="floatLeaf leaf1" aria-hidden="true"></span>
+        <span class="floatLeaf leaf2" aria-hidden="true"></span>
+        <span class="floatLeaf leaf3" aria-hidden="true"></span>
+        <span class="floatLeaf leaf4" aria-hidden="true"></span>
+
+        <div class="heroInner">
+          <div class="heroKicker">
+            <span class="kickerIcon">🌱</span>
+            <span>Agriculture & Organic Farms</span>
+          </div>
+
+          <h1>Rooted in Nature,<br />Growing the Future</h1>
+
+          <p>
+            Welcome to Kaloyebei Youth Integrated Farmers Association (KYIFA), a
+            passionate community of young changemakers working at the heart of
+            Kaloyebei and its surroundings. At KYIFA, we believe in the power of
+            youth, unity, and sustainable action to transform lives and build
+            resilient communities. Rooted in the principles of empowerment,
+            peace, and innovation, we champion agricultural development,
+            environmental stewardship, education, gender equity, and community
+            wellness. Through our diverse programs, we equip young people and
+            marginalized groups with the skills, tools, and opportunities they
+            need to thrive — socially and economically.
+          </p>
+
+          <a class="heroBtn" href="#">
+            Explore More <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <section class="services-section" id="services">
+      <div class="services-container">
+        <!-- ROW 1 (4 columns) -->
+        <div class="services-top-grid reveal-group">
+          <div class="service-item reveal">
+            <div class="service-icon">
+              <!-- icon svg (replace with yours) -->
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 20V9m4 11V4m4 16v-8m4 8v-6m4 6v-9"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Farm Development</h3>
+            <p>
+              Farm Development is at the core of KYIFA’s mission to strengthen
+              food security and sustainable livelihoods in Kalobeyei and its
+              surrounding communities. Through this program, we empower youth
+              and local farmers with practical skills, modern agricultural
+              knowledge, and access to essential resources needed to improve
+              productivity and resilience. KYIFA promotes sustainable and
+              regenerative farming practices, supports soil restoration,
+              encourages climate-smart agriculture, and nurtures agribusiness
+              opportunities that enable young people to become self-reliant. By
+              strengthening farming systems, improving food production, and
+              fostering community participation, the Farm Development program
+              contributes to building a healthier, more food-secure, and
+              economically stable community.
+            </p>
+          </div>
+
+          <div class="service-item reveal">
+            <div class="service-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 11h18M6 11V7a3 3 0 013-3h6a3 3 0 013 3v4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M7 20h10"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Crop Management</h3>
+            <p>
+              Crop Management focuses on improving how crops are planned, grown,
+              protected, and harvested to ensure consistent yields and long-term
+              soil health. At KYIFA, we equip youth and farmers with hands-on
+              training in sustainable crop production, including proper land
+              preparation, seed selection, planting techniques, pest and disease
+              control, irrigation management, and post-harvest handling. By
+              promoting environmentally friendly and climate-smart farming
+              practices, this program helps reduce crop losses, improve food
+              quality, and increase productivity while protecting the natural
+              ecosystem. Through effective crop management, KYIFA supports
+              resilient farming systems that strengthen food security and income
+              generation in Kalobeyei and surrounding communities.
+            </p>
+          </div>
+
+          <div class="service-item reveal">
+            <div class="service-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3v18"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M5 10c4 0 3-5 7-5s3 5 7 5-3 11-7 11-7-11-7-11z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Soil Restoration</h3>
+            <p>
+              Soil Restoration is essential to rebuilding healthy, productive
+              land and ensuring sustainable agriculture for future generations.
+              At KYIFA, we work with youth and farmers to restore degraded soils
+              through environmentally responsible practices such as composting,
+              organic fertilization, crop rotation, mulching, and agroforestry.
+              These methods improve soil structure, increase nutrient
+              availability, enhance water retention, and support biodiversity
+              while reducing reliance on harmful chemicals. By promoting soil
+              conservation and regeneration, the program helps farmers achieve
+              better yields, protect the environment, and build resilient
+              farming systems that sustain livelihoods and strengthen food
+              security across Kalobeyei and surrounding communities.
+            </p>
+          </div>
+
+          <div class="service-item reveal">
+            <div class="service-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21c4-2 7-6 7-11a7 7 0 10-14 0c0 5 3 9 7 11z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M9 12c2 1 4 1 6 0"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Organic Cultivation</h3>
+            <p>
+              Organic Cultivation focuses on producing healthy, chemical-free
+              food while protecting the environment and improving long-term soil
+              fertility. At KYIFA, we train youth and farmers in sustainable
+              organic farming practices such as natural pest control, compost
+              preparation, use of organic manure, intercropping, and crop
+              diversity. These techniques reduce dependence on synthetic
+              fertilizers and pesticides, promote ecological balance, and
+              improve the nutritional value of farm produce. Through this
+              program, farmers are empowered to grow safer food, protect
+              biodiversity, and create environmentally friendly farming systems
+              that support sustainable livelihoods and community well-being in
+              Kalobeyei and beyond.
+              
+            </p>
+          </div>
+        </div>
+
+        <!-- ROW 2 (3 divs) -->
+        <div class="services-bottom-grid reveal-group">
+          <article class="img-card reveal">
+            <img src="images/slide2.jpg" alt="Farming image" />
+          </article>
+
+          <article class="img-card reveal">
+            <img src="images/8.jpeg" alt="Farming image" />
+          </article>
+
+          <article class="cta-card reveal">
+            <div class="cta-bg"></div>
+            <div class="cta-content">
+              <p>
+                Agriculture nurtures life through organic growth, sustainable
+                farming.
+              </p>
+              <button class="cta-btn" type="button">
+               Our Projects <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+           <article class="img-card reveal">
+            <img src="images/7.jpeg" alt="Farming image" />
+          </article>
+
+          <article class="img-card reveal">
+            <img src="images/013.jpg" alt="Farming image" />
+          </article>
+
+          <article class="cta-card reveal">
+            <div class="cta-bg"></div>
+            <div class="cta-content">
+              <p>
+                Agriculture nurtures life through organic growth, sustainable
+                farming.
+              </p>
+              <button class="cta-btn" type="button">
+                About Us <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+        </div>
+    </section>
+
+    <section class="stats-section" id="stats">
+      <div class="stats-wrap">
+        <!-- Top content -->
+        <div class="stats-top">
+          <div class="stats-title">
+            <div class="stats-kicker">
+              <span class="kicker-icon" aria-hidden="true">🌱</span>
+              <span>Sustainable Farming</span>
+            </div>
+
+            <h2>Cultivating Excellence in<br />Every Green Field</h2>
+          </div>
+
+          <p class="stats-desc">
+            Sustainable farming is the foundation of resilient communities and long-term food security. By combining traditional knowledge with modern, eco-friendly practices, we nurture healthier soils, stronger crops, and balanced ecosystems. Our approach promotes responsible resource use, protects biodiversity, and empowers farmers to adapt to changing environmental conditions. Through innovation, collaboration, and care for the land, we continue cultivating excellence in every green field.
+          </p>
+        </div>
+
+        <!-- Center button -->
+        <div class="stats-cta">
+          <button class="touch-btn" type="button">
+            Get In Touch <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <!-- Cards row -->
+        <div class="stats-cards" data-counter-scope>
+          <!-- Left card -->
+          <article class="stat-card small reveal">
+            <div class="stat-content">
+              <div class="stat-number">
+                <span class="count" data-target="80">0</span
+                ><span class="pct">%</span>
+              </div>
+              <div class="stat-label">Efficiency</div>
+            </div>
+
+            <img
+              class="stat-img"
+              src="https://pngimg.com/uploads/corn/corn_PNG5279.png"
+              alt="Corn image"
+            />
+          </article>
+
+          <!-- Middle card -->
+          <article class="stat-card big reveal">
+            <div class="stat-content">
+              <div class="stat-number">
+                <span class="count" data-target="98">0</span
+                ><span class="pct">%</span>
+              </div>
+              <div class="stat-label">Increase in Yields</div>
+            </div>
+
+            <img
+              class="stat-img"
+              src="https://pngimg.com/uploads/wheat/wheat_PNG88.png"
+              alt="Grains image"
+            />
+          </article>
+
+          <!-- Right card -->
+          <article class="stat-card small reveal">
+            <div class="stat-content">
+              <div class="stat-number">
+                <span class="count" data-target="50">0</span
+                ><span class="pct">%</span>
+              </div>
+              <div class="stat-label">Farm Growth</div>
+            </div>
+
+            <img
+              class="stat-img"
+              src="https://pngimg.com/uploads/corn/corn_PNG5285.png"
+              alt="Plant image"
+            />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tractor-hero" id="purpose">
+  <div class="tractor-top-fade" aria-hidden="true"></div>
+
+  <!-- background -->
+  <div class="tractor-bg" aria-hidden="true"></div>
+  <div class="tractor-overlay" aria-hidden="true"></div>
+
+  <div class="tractor-inner">
+    <h2 class="tractor-title">Rooted in Nature, Growing<br />with Honest Purpose</h2>
+
+    <!-- points (01–05 like screenshot) -->
+    <div class="tractor-points">
+      <div class="tpoint p1">
+        <div class="tbadge"><span class="tnum">01</span></div>
+        <div class="ttext">Health From of the<br />Earth</div>
+      </div>
+
+      <div class="tpoint p2">
+        <div class="tbadge"><span class="tnum">02</span></div>
+        <div class="ttext">Rooted in Sustainable<br />Growth</div>
+      </div>
+
+      <div class="tpoint p3">
+        <div class="tbadge"><span class="tnum">03</span></div>
+        <div class="ttext">Technology Meets the<br />Soil Flow</div>
+      </div>
+
+      <div class="tpoint p4">
+        <div class="tbadge"><span class="tnum">04</span></div>
+        <div class="ttext">Fields of Shared<br />Prosperity</div>
+      </div>
+
+      <div class="tpoint p5">
+        <div class="tbadge"><span class="tnum">05</span></div>
+        <div class="ttext">Seeds Sprouting<br />Sustainable</div>
+      </div>
+    </div>
+
+    <!-- tractor -->
+    <img
+      class="tractor-img"
+      src="images/img1.png"
+      alt="Tractor"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+    <section class="s4" id="section4">
+      <div class="s4-wrap">
+        <!-- Left big image -->
+        <div class="s4-left reveal">
+          <img
+            src="images/003.jpg"
+            alt="Farmer working on field"
+          />
+        </div>
+
+        <!-- Right content -->
+        <div class="s4-right">
+          <div class="s4-kicker reveal">
+            <span class="s4-kicker-icon" aria-hidden="true">
+              <!-- small leaf icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 13c6-1 10-6 12-10 1 8-2 16-10 18-2 0-4-2-2-8z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7 14c2 1 4 1 6 0"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span>Agro Excellence</span>
+          </div>
+
+          <h2 class="s4-title reveal">Building a Greener Farming</h2>
+
+          <!-- Two mini feature blocks -->
+          <div class="s4-features">
+            <div class="s4-feature reveal">
+              <div class="s4-miniicon" aria-hidden="true">
+                <!-- simple icon -->
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 20V8l7-4 7 4v12"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M9 20v-6h6v6"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="s4-feature-text">
+                <div class="s4-feature-top">
+                  <strong class="s4-pct"
+                    ><span class="s4-count" data-target="80">0</span>%</strong
+                  >
+                  <span class="s4-feature-title">Pure Growth</span>
+                </div>
+                <p>
+                 Pure Growth reflects our dedication to nurturing crops naturally while improving farm productivity and resilience. By adopting sustainable practices such as organic fertilization, water-efficient irrigation, and crop diversification, we help farmers achieve healthier harvests and stable growth. This approach strengthens soil vitality, reduces dependency on harmful chemicals, and supports long-term agricultural sustainability.
+                </p>
+              </div>
+            </div>
+
+            <div class="s4-feature reveal">
+              <div class="s4-miniicon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22c4.5-2.8 7-6.5 7-11a7 7 0 10-14 0c0 4.5 2.5 8.2 7 11z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M9 12c2 1 4 1 6 0"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="s4-feature-text">
+                <div class="s4-feature-top">
+                  <strong class="s4-pct"
+                    ><span class="s4-count" data-target="95">0</span>%</strong
+                  >
+                  <span class="s4-feature-title">Organic Roots</span>
+                </div>
+                <p>
+                 Organic Roots symbolizes our deep connection to environmentally friendly farming and regenerative agriculture. We focus on restoring soil health, promoting biodiversity, and encouraging natural farming solutions that protect ecosystems. Through organic cultivation and community training, we help farmers grow safe, nutritious produce while building strong, sustainable agricultural foundations for the future.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel (shows 3 cards at a time; then slides left to next 3) -->
+          <div class="s4-carousel reveal" aria-label="Services carousel">
+            <div class="s4-window">
+              <div class="s4-track" id="s4Track">
+                <!-- Group A (3 cards) -->
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+                      alt="Eco farming"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">The Eco-Friendly Farming</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
+                      alt="Organic produce"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">Organic Produce Supply</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80"
+                      alt="Agri technology"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">Agri-Technology Innovations</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+
+                <!-- Group B (next 3 cards) -->
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+                      alt="Soil care"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">Soil Health Solutions</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=900&q=80"
+                      alt="Farm planning"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">Smart Farm Planning</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+
+                <article class="s4-card">
+                  <div class="s4-card-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+                      alt="Harvest support"
+                    />
+                  </div>
+                  <h3 class="s4-card-title">Harvest Support Services</h3>
+                  <a class="s4-readmore" href="#">Read More →</a>
+                </article>
+              </div>
+            </div>
+
+            <!-- optional dots (auto updates) -->
+            <div class="s4-dots" aria-hidden="true">
+              <span class="s4-dot on" id="dot0"></span>
+              <span class="s4-dot" id="dot1"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="brand-strip">
+      <div class="brand-strip__mask">
+        <div class="brand-strip__track" id="brandTrack">
+          <!-- Row A -->
+          <div class="brand-strip__row" id="brandRow">
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/2909/2909767.png"
+                alt=""
+              />
+              <span class="brand-name">PureHarvest</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/628/628283.png"
+                alt=""
+              />
+              <span class="brand-name">NatureNest</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/415/415733.png"
+                alt=""
+              />
+              <span class="brand-name">Farming</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png"
+                alt=""
+              />
+              <span class="brand-name">GreenLeaf</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png"
+                alt=""
+              />
+              <span class="brand-name">PureHarvest</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/3076/3076129.png"
+                alt=""
+              />
+              <span class="brand-name">NatureNest</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/3793/3793473.png"
+                alt=""
+              />
+              <span class="brand-name">Farming</span>
+            </div>
+
+            <div class="brand-item">
+              <img
+                class="brand-icon"
+                src="https://cdn-icons-png.flaticon.com/512/1518/1518968.png"
+                alt=""
+              />
+              <span class="brand-name">GreenLeaf</span>
+            </div>
+          </div>
+
+          <!-- Row B (clone will be injected by JS) -->
+          <div
+            class="brand-strip__row"
+            id="brandRowClone"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="seeds-section" id="seedsSection">
+      <!-- Bottom-left image -->
+      <img
+        class="seeds-wheat"
+        src="images/011.jpg"
+        alt="Wheat"
+        loading="lazy"
+      />
+
+      <div class="seeds-wrap">
+        <!-- LEFT: title -->
+        <div class="seeds-left">
+          <div class="seeds-kicker">
+            <span class="seeds-kicker-icon">🌱</span>
+            <span class="seeds-kicker-text">Precision Agriculture</span>
+          </div>
+
+          <h2 class="seeds-title">
+            Seeds of Customer<br />
+            Satisfaction
+          </h2>
+        </div>
+
+        <!-- RIGHT: cards + paragraph + testimonial -->
+        <div class="seeds-right">
+          <div class="seeds-cards">
+            <div class="seeds-card seeds-card--rating">
+              <div class="seeds-card-title">4.9 Basic Rating</div>
+              <div class="seeds-card-sub">
+               Our programs are trusted by farmers and communities for their consistency, transparency, and positive impact. Through hands-on training, technical guidance, and sustainable farming solutions, we continue to deliver measurable improvements in crop quality, productivity, and farmer satisfaction.
+              </div>
+            </div>
+
+            <div class="seeds-card seeds-card--support">
+              <div class="seeds-card-title seeds-card-title--white">
+                Farmers Support
+              </div>
+              <div class="seeds-badge">
+                <div class="seeds-badge-top">
+                  <span class="seed-tree"></span>
+                  <span class="seed-tree"></span>
+                  <span class="seed-tree"></span>
+                </div>
+                <div class="seeds-badge-mid">100%</div>
+                <div class="seeds-badge-bot">Natural</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="seeds-paragraph">
+            Precision Agriculture at KYIFA combines modern farming knowledge with community-centered practices to deliver reliable, efficient, and sustainable results. By using data-driven techniques, improved farming methods, and continuous farmer support, we ensure higher productivity, smarter resource use, and healthier crops. Our focus is on building trust, improving livelihoods, and empowering farmers to achieve long-term success while protecting the environment.
+          </p>
+
+          <!-- Testimonial ticker -->
+          <div class="seeds-ticker" aria-label="Customer testimonials">
+            <div class="seeds-ticker-mask">
+              <div class="seeds-ticker-item" id="seedsTickerItem">
+                <div class="seeds-quote">
+                  <div class="seeds-quote-text" id="seedsQuoteText">
+                    “I was impressed by how KYIFA blends traditional farming knowledge with modern sustainable practices. Their soil restoration and climate-smart agriculture initiatives are practical, effective, and highly beneficial to local farmers.”
+                  </div>
+
+                  <div class="seeds-quote-footer">
+                    <div class="seeds-user">
+                      <img
+                        class="seeds-avatar"
+                        id="seedsAvatar"
+                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=80"
+                        alt="Client avatar"
+                        loading="lazy"
+                      />
+                      <div class="seeds-user-meta">
+                        <div class="seeds-user-name" id="seedsName">
+                          Luis Vireon
+                        </div>
+                        <div class="seeds-user-role" id="seedsRole">
+                          Happy Client
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="seeds-quote-icon" aria-hidden="true">❞</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /ticker -->
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section" id="newsSection">
+      <div class="news-wrap">
+        <div class="news-head">
+          <div class="news-kicker">
+            <span class="news-kicker-icon">🌱</span>
+            <span class="news-kicker-text">Latest Filed News</span>
+          </div>
+
+          <h2 class="news-title">
+            The Rise of Organic Farming<br />
+            Practices
+          </h2>
+        </div>
+
+        <div class="news-grid">
+          <!-- Card 1 -->
+          <article class="news-card">
+            <a class="news-img" href="#">
+              <img
+                src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=1400&q=80"
+                alt="Farm technology"
+                loading="lazy"
+              />
+            </a>
+
+            <div class="news-body">
+              <div class="news-date">
+                <span class="news-date-icon">🗓</span>
+                <span>September 13, 2025</span>
+              </div>
+
+              <h3 class="news-card-title">
+                <a href="#">Farm Technology<br />Changing Yield</a>
+              </h3>
+
+              <p class="news-text">
+               Modern farming technology is transforming how farmers manage crops and increase productivity. Through precision agriculture, soil monitoring, and smart irrigation, farmers can reduce waste while improving yields. At KYIFA, we promote the use of affordable technologies that empower youth and smallholder farmers to make data-driven decisions and improve food security across the community.
+              </p>
+
+              <a class="news-read" href="#">
+                Read More <span class="news-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="news-card">
+            <a class="news-img" href="#">
+              <img
+                src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1400&q=80"
+                alt="Tractor in field"
+                loading="lazy"
+              />
+            </a>
+
+            <div class="news-body">
+              <div class="news-date">
+                <span class="news-date-icon">🗓</span>
+                <span>October 14, 2025</span>
+              </div>
+
+              <h3 class="news-card-title">
+                <a href="#">Understanding Soil Health<br />and Yields</a>
+              </h3>
+
+              <p class="news-text">
+               Healthy soil is the foundation of successful farming and sustainable food production. By practicing composting, crop rotation, and organic soil enrichment, farmers can restore nutrients and improve long-term productivity. KYIFA works with local farmers and youth groups to promote soil conservation techniques that protect the environment while increasing crop performance and resilience.
+              </p>
+
+              <a class="news-read" href="#">
+                Read More <span class="news-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="news-card">
+            <a class="news-img" href="#">
+              <img
+                src="images/007.jpg"
+                alt="Organic farming"
+                loading="lazy"
+              />
+            </a>
+
+            <div class="news-body">
+              <div class="news-date">
+                <span class="news-date-icon">🗓</span>
+                <span>October 14, 2025</span>
+              </div>
+
+              <h3 class="news-card-title">
+                <a href="#">Organic Farming: Earth’s<br />Best Friend</a>
+              </h3>
+
+              <p class="news-text">
+                Organic farming supports both human health and environmental sustainability by avoiding harmful chemicals and promoting natural farming methods. At KYIFA, we train farmers in eco-friendly practices such as natural pest control, biodiversity conservation, and regenerative agriculture. These approaches help build healthier communities, protect ecosystems, and ensure long-term agricultural success.
+              </p>
+              <a class="news-read" href="#">
+                Read More <span class="news-arrow">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+<footer class="ag-footer" id="agFooter">
+  <!-- Background image (overlayed) -->
+  <div
+    class="ag-footer-bg"
+    style="background-image: url('images/002.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <div class="ag-footer-overlay" aria-hidden="true"></div>
+
+  <div class="ag-footer-wrap">
+    <div class="ag-footer-grid">
+      <!-- LEFT -->
+      <div class="ag-footer-col ag-footer-brand">
+        <div class="ag-footer-logo">
+          <span class="ag-footer-logo-icon">🌿</span>
+          <span class="ag-footer-logo-text">KYIFA</span>
+        </div>
+
+        <div class="ag-footer-contact">
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✳</span>
+            <a href="tel:+254707841370">+254 707 841 370</a>
+          </div>
+
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✉</span>
+            <a href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="ag-footer-quick">
+          <a
+            class="ag-quick-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="ag-quick-ico" aria-hidden="true">💬</span> WhatsApp Us
+          </a>
+
+          <a
+            class="ag-quick-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+          >
+            <span class="ag-quick-ico" aria-hidden="true">✉</span> Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Our Services
+        </h3>
+
+        <ul class="ag-footer-links">
+          <li>
+            <a href="services.html#service-organic"
+              ><span class="ag-link-arrow">↗</span> Agriculture &amp; Livelihood Development</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-digital"
+              ><span class="ag-link-arrow">↗</span> Environmental Protection &amp; Ecosystem Restoration</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-agritech"
+              ><span class="ag-link-arrow">↗</span> Water, Sanitation &amp; Hygiene</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-eco"
+              ><span class="ag-link-arrow">↗</span> Watershed Management &amp; Sanitation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-emer"
+              ><span class="ag-link-arrow">↗</span> Humanitarian Emergency Response</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-peace"
+              ><span class="ag-link-arrow">↗</span> Peace Building &amp; Conflict Mitigation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-sport"
+              ><span class="ag-link-arrow">↗</span> Sports &amp; Cultural Activities</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-produce"
+              ><span class="ag-link-arrow">↗</span> Gender Empowerment</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Sign up to our newsletter
+        </h3>
+
+        <form class="ag-newsletter" onsubmit="return false;">
+          <input class="ag-news-input" type="email" placeholder="Email Address" required />
+          <button class="ag-news-btn" type="submit" aria-label="Send">✈</button>
+        </form>
+
+        <p class="ag-footer-note">
+          Rooted in nature’s care, we grow with integrity, nurture every seed with love,
+          and build stronger, healthier communities in Kalobeyei.
+        </p>
+
+        <div class="ag-social">
+          <!-- WhatsApp -->
+          <a
+            class="ag-social-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+
+          <!-- Email -->
+          <a
+            class="ag-social-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+
+          <!-- Replace these with your real links -->
+          <a
+            class="ag-social-btn"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="ag-social-hint">
+          Tap an icon to message us, email us, or view our pages.
+        </p>
+      </div>
+    </div>
+
+    <div class="ag-footer-divider"></div>
+
+    <div class="ag-footer-bottom">
+      <p>
+        © Copyright 2026. All rights reserved. <span>KYIFA</span>.
+        Designed by <span>CHRIMOTECH</span>
+      </p>
+    </div>
+  </div>
+
+  <button class="ag-to-top" id="agToTop" aria-label="Back to top">↑</button>
+</footer>
+
+   
+    <script src="script.js"></script>
+  </body>
+</html>

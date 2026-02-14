@@ -1,0 +1,2367 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="computing school and computer courses school in western kenya"
+    />
+    <title>HALCHIQ CAR RENTALS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* make sure nav can show dropdown */
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+
+      /* wrapper */
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* trigger */
+      .nav-dropbtn {
+        cursor: pointer;
+      }
+      .nav-caret {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-left: 6px;
+      }
+
+      /* panel */
+      .nav-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 10px;
+        display: none;
+        z-index: 9999;
+      }
+
+      /* show */
+      .nav-dropdown.is-open .nav-dropdown-panel {
+        display: block;
+      }
+
+      /* pointer triangle */
+      .nav-dropdown-panel::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      /* items */
+      .nav-dd-item {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(15, 27, 20, 0.88);
+        font-weight: 650;
+        font-size: 13px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .nav-dd-item:hover {
+        background: rgba(185, 227, 61, 0.22);
+      }
+      .nav-dd-item.is-active {
+        background: #b9e33d;
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 800;
+      }
+
+      :root {
+        --green: #b9e33d; /* lime */
+        --deep: #072319; /* dark green */
+        --text: #0f1411;
+        --muted: rgba(15, 20, 17, 0.68);
+        --line: rgba(15, 20, 17, 0.14);
+        --card: #f6f2ea;
+        --bg: #ffffff;
+        --radius: 18px;
+        --shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        background: var(--bg);
+        color: var(--text);
+      }
+      a {
+        color: inherit;
+      }
+
+      /* ---------------- HERO ---------------- */
+      .svc-hero {
+        position: relative;
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .svc-hero__bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1900&q=80")
+          center/cover no-repeat;
+        transform: scale(1.03);
+      }
+      .svc-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(7, 35, 25, 0.55),
+          rgba(7, 35, 25, 0.78)
+        );
+      }
+      .svc-hero__tractor {
+        position: absolute;
+        left: 34px;
+        bottom: -18px;
+        width: 220px;
+        height: auto;
+        z-index: 2;
+        filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+        user-select: none;
+        pointer-events: none;
+      }
+      .svc-hero__content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: #fff;
+        padding: 18px;
+      }
+      .svc-hero__content h1 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 56px);
+        font-weight: 900;
+        letter-spacing: -0.6px;
+      }
+      .svc-crumbs {
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .svc-crumbs a {
+        color: var(--green);
+        text-decoration: none;
+      }
+      .svc-crumbs a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------------- LAYOUT ---------------- */
+      .svc-page {
+        padding: 70px 18px 80px;
+      }
+      .svc-wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 34px;
+        align-items: start;
+      }
+
+      /* ---------------- LEFT SIDEBAR ---------------- */
+      .svc-side-card {
+        background: #8c8a63;
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .svc-side-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 14px;
+      }
+      .svc-side-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--green);
+      }
+      .svc-side-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .svc-side-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        text-decoration: none;
+        background: #fff;
+        color: rgba(15, 20, 17, 0.85);
+        border-radius: 8px;
+        padding: 12px 12px;
+        font-weight: 800;
+        font-size: 13px;
+        border: 1px solid rgba(15, 20, 17, 0.08);
+        transition:
+          transform 0.12s ease,
+          background 0.15s ease;
+      }
+      .svc-side-link:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .svc-side-link .arrow {
+        color: #6aa100;
+        font-weight: 900;
+      }
+      .svc-side-link.is-active {
+        background: var(--green);
+        border-color: rgba(7, 35, 25, 0.15);
+        color: rgba(7, 35, 25, 0.95);
+      }
+      .svc-side-link.is-active .arrow {
+        color: rgba(7, 35, 25, 0.95);
+      }
+
+      /* promo card under list */
+      .svc-promo {
+        margin-top: 18px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #8c8a63;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+      .svc-promo__img {
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        height: 260px;
+        background: url("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80")
+          center/cover no-repeat;
+      }
+      .svc-promo__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(7, 35, 25, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 22px;
+        text-align: center;
+        gap: 12px;
+        color: #fff;
+      }
+      .svc-promo__overlay h3 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.1;
+        font-weight: 900;
+      }
+      .svc-btn {
+        background: var(--green);
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-weight: 900;
+        cursor: pointer;
+        color: rgba(7, 35, 25, 0.95);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ---------------- MAIN CONTENT ---------------- */
+      .svc-main {
+        min-width: 0;
+      }
+      .svc-image {
+        width: 100%;
+        height: 360px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #eee;
+      }
+      .svc-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .svc-title {
+        margin: 28px 0 8px;
+        font-size: 34px;
+        letter-spacing: -0.5px;
+        font-weight: 950;
+      }
+      .svc-text {
+        margin: 0 0 26px;
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 820px;
+        font-size: 14px;
+      }
+
+      .svc-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 20px;
+      }
+      .svc-feature {
+        background: var(--card);
+        border-radius: 16px;
+        padding: 18px 18px 20px;
+        border: 1px solid rgba(15, 20, 17, 0.06);
+      }
+      .svc-feature-head {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 12px;
+      }
+      .svc-num {
+        color: rgba(106, 161, 0, 0.95);
+        font-weight: 950;
+        font-size: 26px;
+        min-width: 48px;
+      }
+      .svc-feature h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 950;
+      }
+      .svc-feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      /* ---------------- FAQ ---------------- */
+      .faq-wrap {
+        margin-top: 46px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .faq-title {
+        text-align: center;
+        font-size: 34px;
+        font-weight: 950;
+        margin: 20px 0 6px;
+      }
+      .faq-card {
+        background: var(--card);
+        border-radius: 18px;
+        padding: 26px;
+        border: 1px solid rgba(15, 20, 17, 0.06);
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .faq-card h3 {
+        margin: 0 0 16px;
+        font-size: 24px;
+        font-weight: 950;
+      }
+
+      .acc-item {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        border: 1px solid rgba(15, 20, 17, 0.08);
+        background: #fff;
+      }
+      .acc-btn {
+        width: 100%;
+        border: 0;
+        background: #8c8a63;
+        color: #fff;
+        font-weight: 800;
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .acc-item.is-open .acc-btn {
+        background: var(--green);
+        color: rgba(7, 35, 25, 0.95);
+      }
+      .acc-icon {
+        font-weight: 950;
+        font-size: 18px;
+        width: 22px;
+        text-align: center;
+      }
+      .acc-panel {
+        display: none;
+        padding: 14px 16px 16px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 13px;
+        background: #fff;
+        border-top: 1px solid rgba(15, 20, 17, 0.1);
+      }
+      .acc-item.is-open .acc-panel {
+        display: block;
+      }
+
+      .svc-next {
+        max-width: 820px;
+        margin: 26px auto 0;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+      .svc-next a {
+        text-decoration: none;
+      }
+
+      /* show/hide service sections (only one visible) */
+      .svc-section {
+        display: none;
+      }
+      .svc-section.is-active {
+        display: block;
+      }
+
+      /* responsive */
+      @media (max-width: 980px) {
+        .svc-wrap {
+          grid-template-columns: 1fr;
+        }
+        .svc-image {
+          height: 320px;
+        }
+        .svc-feature-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-hero__tractor {
+          width: 170px;
+          left: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+   <header class="navBar" id="navBar">
+  <div class="navSection">
+    <!-- Brand (Logo + Name) -->
+    <div class="navBrand">
+      <a href="#" class="brandLink">
+        <img class="brandLogo" src="images/logo.jpeg" alt="KYIFA Logo" />
+        <span class="brandText">
+          <span class="brandTop">Kaloyebei Youth</span>
+          <span class="brandBottom">Integrated Farmers</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Links (DESKTOP) -->
+    <div class="navLinks">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link has-dropdown is-active" href="index.html">Home</a>
+        <a class="nav-link has-dropdown" href="about.html">About Us</a>
+
+        <div class="nav-dropdown" id="servicesMenu">
+          <a
+            class="nav-link has-dropdown nav-dropbtn"
+            href="javascript:void(0)"
+          >
+            Projects <span class="nav-caret">▾</span>
+          </a>
+
+          <div class="nav-dropdown-panel" role="menu" aria-label="Projects menu">
+            <a
+              class="nav-dd-item is-active"
+              href="services.html#service-organic"
+              role="menuitem"
+              >Agriculture & Livelihood Development</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-digital"
+              role="menuitem"
+              >Environmental protection & Eco System Restoration</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-agritech"
+              role="menuitem"
+              >Water Sanitation & Hygiene</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-eco"
+              role="menuitem"
+              >WaterShed Management and Sanitation</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-produce"
+              role="menuitem"
+              >Gender Empowerement</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-emer"
+              role="menuitem"
+              >Humanitarian Emergency Response</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-sport"
+              role="menuitem"
+              >Sports and Cultural activities</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-peace"
+              role="menuitem"
+              >Peace Building and Conflict Mitigation</a
+            >
+          </div>
+        </div>
+
+        <a class="nav-link has-dropdown" href="gallery.html">Gallery</a>
+        <a class="nav-link has-dropdown" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Right actions -->
+    <div class="navActions">
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="icon-btn navToggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <!-- Hamburger icon -->
+        <svg
+          class="icon-hamburger"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <!-- Close (X) icon -->
+        <svg
+          class="icon-close"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Existing search -->
+      <div class="search-wrap">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Search"
+          aria-expanded="false"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm11 3-6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search..." aria-label="Search input" />
+        </div>
+      </div>
+
+      <!-- Existing CTA -->
+      <a href="#" class="cta-btn">
+        Get In Touch <span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <nav class="mobileNav" aria-label="Mobile navigation">
+      <!-- Add .is-active on the current page if you want -->
+      <a class="mobileLink is-active" href="index.html">Home</a>
+      <a class="mobileLink" href="about.html">About Us</a>
+
+      <!-- Projects accordion -->
+      <button
+        class="mobileDropBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileProjectsPanel"
+      >
+        Projects <span class="nav-caret">▾</span>
+      </button>
+
+      <div class="mobileDropPanel" id="mobileProjectsPanel" hidden>
+        <a class="mobileLink" href="services.html#service-organic"
+          >Agriculture & Livelihood Development</a
+        >
+        <a class="mobileLink" href="services.html#service-digital"
+          >Environmental protection & Eco System Restoration</a
+        >
+        <a class="mobileLink" href="services.html#service-agritech"
+          >Water Sanitation & Hygiene</a
+        >
+        <a class="mobileLink" href="services.html#service-eco"
+          >WaterShed Management and Sanitation</a
+        >
+        <a class="mobileLink" href="services.html#service-produce"
+          >Gender Empowerement</a
+        >
+        <a class="mobileLink" href="services.html#service-emer"
+          >Humanitarian Emergency Response</a
+        >
+        <a class="mobileLink" href="services.html#service-sport"
+          >Sports and Cultural activities</a
+        >
+        <a class="mobileLink" href="services.html#service-peace"
+          >Peace Building and Conflict Mitigation</a
+        >
+      </div>
+
+      <a class="mobileLink" href="gallery.html">Gallery</a>
+      <a class="mobileLink" href="contact.html">Contact</a>
+
+      <a class="mobileCta" href="contact.html">
+        Get In Touch <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+    <!-- HERO -->
+    <section class="svc-hero">
+      <div class="svc-hero__bg"></div>
+      <div class="svc-hero__overlay"></div>
+      <img
+        class="svc-hero__tractor"
+        src="https://pngimg.com/uploads/tractor/tractor_PNG16233.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="svc-hero__content">
+        <h1 id="heroTitle">Agriculture & Livelihood Development</h1>
+        <div class="svc-crumbs">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Service</span>
+          <span>›</span>
+          <span id="heroCrumb">Agriculture & Livelihood Development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE -->
+    <section class="svc-page">
+      <div class="svc-wrap">
+        <!-- LEFT -->
+        <aside>
+          <div class="svc-side-card">
+            <div class="svc-side-title">
+              <span class="svc-side-dot"></span>
+              <span>Our Services</span>
+            </div>
+
+            <ul class="svc-side-list" id="sideList">
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-organic"
+                  href="services.html#service-organic"
+                  >Agriculture & Livelihood Development <span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-digital"
+                  href="services.html#service-digital"
+                  >Environmental protection & Eco System Restoration <span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-agritech"
+                  href="services.html#service-agritech"
+                  >Water Sanitation & Hygiene<span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-produce"
+                  href="services.html#service-produce"
+                  >WaterShade Management & Sanitation<span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-eco"
+                  href="services.html#service-eco"
+                  >Gender Empowerement <span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-sport"
+                  href="services.html#service-sport"
+                  >Sports & Cultural activities <span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-emer"
+                  href="services.html#service-emer"
+                  >Humanitarerian & Emergency Response <span class="arrow">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="svc-side-link"
+                  data-service="service-peace"
+                  href="services.html#service-peace"
+                  >Peace & Confict Mitigation<span class="arrow">↗</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="svc-promo">
+            <div class="svc-promo__img">
+              <div class="svc-promo__overlay">
+                <div style="font-size: 40px">🌱</div>
+                <h3>Nature’s Way of<br />Feeding</h3>
+                <a class="svc-btn" href="contact.html"
+                  >Contact Us <span>↗</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT -->
+        <main class="svc-main">
+          <!-- ===================== SERVICE: ORGANIC ===================== -->
+          <section
+            class="svc-section"
+            id="service-organic"
+            data-title="Agriculture & Livelihood Development"
+          >
+            <div class="svc-image">
+              <img src="images/slide2.jpg" alt="" />
+            </div>
+
+            <h2 class="svc-title">
+              Building a Sustainable Future Through Farming
+            </h2>
+            <p class="svc-text">
+              At Kalobeyei Youth Integrated Farmers Association (KYIFA), we believe agriculture is more than farming — it is the foundation of food security, income, and community resilience. Our Agriculture & Livelihood Development program empowers youth and families with practical skills, sustainable farming knowledge, and modern agricultural practices that improve productivity while protecting the environment.
+
+Through climate-smart agriculture, organic farming, and community cooperation, we are building a future where young farmers can feed their families, earn a living, and care for the land for generations to come.
+            </p>
+
+            <div class="svc-feature-grid">
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">01.</div>
+                  <h4>From Soil To Table</h4>
+                </div>
+                <p>
+                  We support the entire farming journey — from preparing the soil, planting quality seeds, nurturing crops, harvesting, and delivering fresh produce to households and local markets. This approach ensures food security, better nutrition, and improved income for farmers while reducing food shortages in the community.
+                </p>
+              </div>
+
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">02.</div>
+                  <h4>Organic Vegetables</h4>
+                </div>
+                <p>
+                  KYIFA promotes the production of healthy, chemical-free vegetables using organic manure, compost, and natural pest control methods. Organic farming improves soil health, protects the environment, and provides safer, more nutritious food for families and markets.
+                </p>
+              </div>
+
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">03.</div>
+                  <h4>Rooted in Nature</h4>
+                </div>
+                <p>
+                 Our farming methods work in harmony with nature. We encourage crop rotation, soil conservation, water harvesting, and planting drought-resistant crops. These practices help farmers adapt to climate change while maintaining long-term productivity of the land.
+                </p>
+              </div>
+
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">04.</div>
+                  <h4>Organic Growth</h4>
+                </div>
+                <p>
+                  We focus on sustainable growth — increasing food production and income without damaging the environment. Through training, agribusiness support, and community farming initiatives, youth gain the knowledge and confidence to turn agriculture into a reliable source of livelihood.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-wrap">
+              <div class="faq-title">Common Questions Answered</div>
+
+              <div class="faq-card">
+                <h3>Smart Irrigation Systems</h3>
+
+                <div class="acc" data-accordion>
+                  <div class="acc-item is-open">
+                    <button class="acc-btn" type="button">
+                      What is the goal of the Agriculture & Livelihood Development program?
+                      <span class="acc-icon">−</span>
+                    </button>
+                    <div class="acc-panel">
+                      The program aims to help youth and families improve food production, gain practical farming skills, and create reliable sources of income through sustainable and climate-smart agricul
+                    </div>
+                  </div>
+
+                  <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      Who can participate in this program?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                     The program is open to youth, women, vulnerable households, and community members who are interested in farming, improving food security, and building sustainable livelihoods.
+                    </div>
+                  </div>
+
+                  <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      Do I need farming experience to join?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      No. The program is designed for both beginners and experienced farmers. Training starts from basic farming knowledge and progresses to more advanced sustainable agriculture practices.
+                    </div>
+                  </div>
+                   <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      What farming skills will participants learn?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      Participants learn land preparation, planting techniques, irrigation methods, soil management, pest control, harvesting, storage, and sustainable farming practices.
+                    </div>
+                  </div>
+                   <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      Does the program support farmers during drought or dry seasons?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      Yes. The program promotes drought-resistant crops, water conservation, irrigation techniques, and climate-smart farming to help farmers continue producing even during dry periods.
+                    </div>
+                  </div>
+                   <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      Can someone benefit without owning land?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      Yes. The program encourages group farming, kitchen gardening, sack farming, and participation in community demonstration farms where youth can learn and practice farming.
+                    </div>
+                  </div>
+                   <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                     What types of crops are promoted in the program?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      The program supports growing vegetables, cereals, legumes, fruits, and other climate-suitable crops that improve both food security and income generation.
+                    </div>
+                  </div>
+                   <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                     How does the program improve food security?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      By helping families grow diverse crops, improve farming productivity, and reduce crop losses, the program ensures households have enough nutritious food throughout the year.
+                    </div>
+                  </div>
+                  
+
+
+                  <div class="acc-item">
+                    <button class="acc-btn" type="button">
+                      How does the program help improve income?
+                      <span class="acc-icon">+</span>
+                    </button>
+                    <div class="acc-panel">
+                      Participants are trained in agribusiness skills such as budgeting, marketing, value addition, and market access. This helps farmers sell their produce, reduce losses, and generate stable income.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="svc-next">
+                  <a class="svc-btn" href="services.html#service-eco"
+                    >The Eco-Friendly Farming <span>↗</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== SERVICE: DIGITAL ===================== -->
+          <section
+            class="svc-section"
+            id="service-digital"
+            data-title="Environmental Protection & Environmental Restoration"
+          >
+            <div class="svc-image">
+              <img
+                src="images/33.jpeg"
+                alt=""
+              />
+            </div>
+            <h2 class="svc-title">Restoring Nature, Securing Our Future</h2>
+            <p class="svc-text">
+             The Environmental Protection & Ecosystem Restoration program focuses on protecting natural resources and rebuilding damaged ecosystems in Kalobeyei and surrounding areas. Environmental challenges such as deforestation, land degradation, climate change, and poor waste management threaten livelihoods and community well-being. Through this program, KYIFA empowers youth and communities to restore ecosystems, conserve biodiversity, and adopt sustainable environmental practices. By working together, we aim to create a cleaner, greener, and more resilient environment for present and future generations.
+            </p>
+
+            <div class="svc-feature-grid">
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">01.</div>
+                  <h4>Tree Planting & Land Restoration</h4>
+                </div>
+                <p>
+                  We promote tree planting and rehabilitation of degraded land to restore soil fertility, prevent erosion, and improve environmental balance. Trees provide shade, improve rainfall patterns, and support biodiversity while helping communities combat climate change.
+                </p>
+              </div>
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">02.</div>
+                  <h4>Community Environmental Awareness</h4>
+                </div>
+                <p>
+                  The program educates youth and communities on environmental conservation, climate change, and sustainable resource use. Awareness activities include clean-up campaigns, environmental training, and community dialogues that encourage responsible environmental behavior.
+                </p>
+              </div>
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">03.</div>
+                  <h4>Waste Management & Clean Environment</h4>
+                </div>
+                <p>
+                  We encourage proper waste disposal, recycling, and reduction of environmental pollution. Communities are trained on safe waste handling, composting organic waste, and keeping public spaces clean to promote health and environmental sustainability.
+                </p>
+              </div>
+              <div class="svc-feature">
+                <div class="svc-feature-head">
+                  <div class="svc-num">04.</div>
+                  <h4>Climate Action & Ecosystem Protection</h4>
+                </div>
+                <p>
+KYIFA empowers youth as climate action leaders by promoting sustainable land use, biodiversity protection, water conservation, and eco-friendly practices that help communities adapt to climate change and protect natural ecosystems.
+                </p>
+              </div>
+            </div>
+            
+            
+          </section>
+
+          <!-- ===================== SERVICE: AGRI-TECH ===================== -->
+          <section
+  class="svc-section"
+  id="service-agritech"
+  data-title="Water Sanitation & Hygiene"
+>
+  <div class="svc-image">
+    <img
+      src="images/34.jpeg"
+      alt=""
+    />
+  </div>
+  <h2 class="svc-title">Clean Water, Healthy Communities</h2>
+  <p class="svc-text">
+    Access to clean water and proper sanitation is essential for health, dignity,
+    and community well-being. In many parts of Kalobeyei, water scarcity, poor
+    sanitation, and limited hygiene awareness continue to pose serious challenges.
+    KYIFA’s Water, Sanitation & Hygiene program works with youth and communities
+    to improve access to safe water, promote good hygiene practices, and develop
+    sustainable water management solutions for long-term resilience.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Safe Water Access</h4>
+      </div>
+      <p>
+        We support communities in improving access to clean and safe water through
+        protection of water sources, water harvesting, and small-scale water
+        systems that ensure reliable supply for households and farms.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Hygiene Education & Awareness</h4>
+      </div>
+      <p>
+        The program promotes proper hygiene practices such as handwashing, safe
+        water storage, and sanitation awareness to prevent waterborne diseases and
+        improve public health in the community.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Sanitation & Community Health</h4>
+      </div>
+      <p>
+        We encourage safe sanitation practices, proper waste disposal, and the use
+        of hygienic facilities to reduce environmental contamination and promote
+        healthier living conditions.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Sustainable Water Management</h4>
+      </div>
+      <p>
+        KYIFA promotes responsible water use, conservation, and protection of
+        local water catchment areas to ensure long-term water sustainability and
+        resilience against drought and water scarcity.
+      </p>
+    </div>
+  </div>
+</section>
+
+          <!-- ===================== SERVICE: PRODUCE ===================== -->
+        <section
+  class="svc-section"
+  id="service-produce"
+  data-title="WaterShade Management & Sanitation"
+>
+  <div class="svc-image">
+    <img src="images/slide2.jpg" alt="" />
+  </div>
+
+  <h2 class="svc-title">Protecting Water Sources, Improving Health</h2>
+  <p class="svc-text">
+    Access to clean water and safe sanitation is essential for health, dignity, and
+    sustainable development in Kalobeyei. Yet seasonal droughts, land degradation,
+    and limited infrastructure often lead to water shortages and increased
+    waterborne diseases. KYIFA’s Watershed Management & Sanitation program works
+    with youth, community leaders, and partners to protect water catchment areas,
+    improve safe water access, promote hygiene awareness, and strengthen
+    community-led solutions for long-term water sustainability.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Water Source Protection</h4>
+      </div>
+      <p>
+        We help communities protect rivers, wells, and water points by reducing
+        pollution, restoring degraded areas, and promoting good practices around
+        water sources to keep water clean and reliable.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Clean Water Access</h4>
+      </div>
+      <p>
+        The program supports practical solutions such as water harvesting, safe
+        storage, and improved water point management to increase access to clean,
+        safe, and dependable water for households and schools.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Sanitation & Hygiene Promotion</h4>
+      </div>
+      <p>
+        We promote hygiene education, handwashing practices, and safer sanitation
+        behaviors to reduce waterborne diseases and improve community health—especially
+        for children and vulnerable families.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Water Conservation & Capacity</h4>
+      </div>
+      <p>
+        KYIFA builds local skills in water conservation and disease prevention by
+        training youth and community groups on responsible water use, basic
+        maintenance, and preparedness during drought and emergencies.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-title">Common Questions Answered</div>
+
+    <div class="faq-card">
+      <h3>Watershed Management & Sanitation</h3>
+
+      <div class="acc" data-accordion>
+        <div class="acc-item is-open">
+          <button class="acc-btn" type="button">
+            What is the main goal of the Watershed Management & Sanitation program?
+            <span class="acc-icon">−</span>
+          </button>
+          <div class="acc-panel">
+            The main goal is to protect local water sources, increase access to clean
+            water, improve sanitation and hygiene practices, and strengthen community
+            capacity for sustainable water management in Kalobeyei.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What is a watershed, and why does it matter to the community?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            A watershed is the area of land that collects and channels rainwater into
+            rivers, wells, and water points. Protecting it matters because damaged land
+            and pollution reduce water quality and quantity, leading to shortages and
+            disease.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program improve access to safe water?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We support practical solutions like protecting water points, promoting water
+            harvesting, encouraging safe storage, and strengthening community management
+            to make water more reliable and safer for daily use.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What hygiene practices does KYIFA promote?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We promote regular handwashing with soap, safe water storage, household
+            cleanliness, and proper sanitation behaviors to reduce diarrhea and other
+            waterborne diseases.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does sanitation affect water sources and health?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Poor sanitation can contaminate soil and water sources, spreading disease.
+            Improved sanitation reduces pollution, protects water quality, and keeps
+            families healthier.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Who can participate in Watershed Management & Sanitation activities?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program is open to youth, women, households, schools, and community
+            groups. We encourage inclusive participation because clean water and hygiene
+            benefit everyone.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program support communities during drought?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We promote water conservation, water harvesting, protection of catchment
+            areas, and preparedness measures that help communities manage scarcity and
+            reduce health risks during dry seasons.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What is meant by “building local capacity” in this program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            It means training youth and community members with skills to protect water
+            sources, maintain basic water systems, practice hygiene, and lead
+            community-based solutions without relying fully on external support.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How can households keep water safe after collecting it?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Households can keep water safe by using clean containers, covering storage
+            containers, avoiding dipping dirty cups or hands inside, and practicing
+            regular container cleaning and safe handling.
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-next">
+        <a class="svc-btn" href="services.html#service-eco"
+          >The Eco-Friendly Farming <span>↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+
+         <section
+  class="svc-section"
+  id="service-eco"
+  data-title="Gender Empowerement"
+>
+  <div class="svc-image">
+    <img src="images/32.jpeg" alt="" />
+  </div>
+
+  <h2 class="svc-title">Empowering Women and Girls, Strengthening Communities</h2>
+  <p class="svc-text">
+    Women and girls in Kalobeyei face many barriers that limit their safety, education,
+    health, and economic opportunities. Early marriage, gender-based violence (GBV),
+    stigma around menstruation, and unequal access to resources continue to affect
+    families and community development. KYIFA’s Gender Empowerment program promotes
+    dignity, protection, and equal opportunity by supporting women and girls with
+    practical skills, leadership development, health education, and community action
+    that includes men and boys as partners for positive change.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Skills & Economic Empowerment</h4>
+      </div>
+      <p>
+        We equip women and girls with practical life and livelihood skills to increase
+        self-reliance, improve income opportunities, and reduce vulnerability caused by
+        economic dependence.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Protection & GBV Prevention</h4>
+      </div>
+      <p>
+        The program raises awareness on gender-based violence, supports survivors
+        through safe referrals, and strengthens community systems that promote safety,
+        respect, and accountability.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Menstrual & Reproductive Health</h4>
+      </div>
+      <p>
+        We promote menstrual hygiene management and reproductive health education so
+        girls and women can live with dignity, stay in school, and make informed
+        decisions about their health and well-being.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Leadership & Community Voice</h4>
+      </div>
+      <p>
+        KYIFA supports women and girls with leadership training, mentorship, and safe
+        spaces to build confidence, participate in decision-making, and amplify their
+        voices in community development.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-title">Common Questions Answered</div>
+
+    <div class="faq-card">
+      <h3>Gender Empowerment</h3>
+
+      <div class="acc" data-accordion>
+        <div class="acc-item is-open">
+          <button class="acc-btn" type="button">
+            What is the main goal of KYIFA’s Gender Empowerment program?
+            <span class="acc-icon">−</span>
+          </button>
+          <div class="acc-panel">
+            The main goal is to promote equality, dignity, and safety by increasing
+            access to skills, health education, protection services, and leadership
+            opportunities for women and girls in Kalobeyei.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Who can participate in the Gender Empowerment program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program welcomes women, girls, youth, community leaders, and also men
+            and boys—because gender equality is strongest when the whole community is
+            involved.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What is GBV, and how does the program help prevent it?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            GBV means gender-based violence—harm directed at someone because of their
+            gender. We prevent it through awareness sessions, promoting respectful
+            relationships, strengthening reporting and referral pathways, and engaging
+            men and boys as allies.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program support survivors of violence?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We provide safe, confidential guidance and connect survivors to trusted
+            services such as medical care, psychosocial support, legal support, and
+            protection partners where available.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Why is menstrual hygiene part of gender empowerment?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Menstrual hygiene affects dignity, health, and school attendance. By
+            promoting menstrual health education and access to proper hygiene
+            information, we help girls stay confident, safe, and active in school and
+            community life.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does economic empowerment reduce vulnerability?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            When women and girls have skills and income opportunities, they are less
+            dependent on others for survival. This can reduce risks such as exploitation,
+            harmful relationships, and early marriage driven by financial hardship.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What leadership opportunities does the program provide?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We support leadership training, mentorship, safe discussion spaces, and
+            community engagement so women and girls can participate in decisions, speak
+            up on community issues, and lead positive change initiatives.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How do you involve men and boys in gender empowerment?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We involve men and boys through dialogue sessions, community education, and
+            activities that promote respect, shared responsibility, and positive
+            masculinity—supporting safer homes and healthier communities.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What changes can the community expect from this program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Communities can expect improved safety and awareness, stronger support for
+            women and girls, better health and dignity outcomes, and increased
+            participation of women in leadership and community development.
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-next">
+        <a class="svc-btn" href="services.html#service-eco"
+          >The Eco-Friendly Farming <span>↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section
+  class="svc-section"
+  id="service-sport"
+  data-title="sports & Cultural Activities"
+>
+  <div class="svc-image">
+    <img src="images/slide2.jpg" alt="" />
+  </div>
+
+  <h2 class="svc-title">Building Unity Through Sports and Culture</h2>
+  <p class="svc-text">
+    Sports and culture create safe spaces where young people can connect, grow, and
+    thrive. In Kalobeyei’s diverse communities, many youth have limited opportunities
+    for recreation, creative expression, and positive social engagement. KYIFA’s
+    Sports & Cultural Activities program brings refugee and host community youth
+    together through games, arts, and cultural events that promote peace, confidence,
+    teamwork, and well-being. By celebrating talent and diversity, we strengthen
+    social cohesion and help prevent violence, idleness, and substance abuse.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Inclusive Sports for Peace</h4>
+      </div>
+      <p>
+        We organize inclusive sports activities and tournaments that bring youth from
+        different backgrounds together to build friendships, teamwork, and mutual
+        understanding—using sport as a tool for peace.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Talent & Creative Expression</h4>
+      </div>
+      <p>
+        The program supports youth to express themselves through music, dance, drama,
+        poetry, and visual arts—helping them build confidence, cope with stress, and
+        develop positive identity and purpose.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Cultural Exchange & Celebrations</h4>
+      </div>
+      <p>
+        We promote cultural exchange events where communities share traditions,
+        stories, and performances. This celebrates diversity and strengthens social
+        cohesion between refugees and host communities.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Healthy Lifestyles & Youth Well-Being</h4>
+      </div>
+      <p>
+        KYIFA promotes healthy living through regular recreation, mentorship, and
+        positive peer engagement. These activities support mental well-being, reduce
+        risky behavior, and encourage discipline and goal-setting.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-title">Common Questions Answered</div>
+
+    <div class="faq-card">
+      <h3>Sports & Cultural Activities</h3>
+
+      <div class="acc" data-accordion>
+        <div class="acc-item is-open">
+          <button class="acc-btn" type="button">
+            What is the main goal of the Sports & Cultural Activities program?
+            <span class="acc-icon">−</span>
+          </button>
+          <div class="acc-panel">
+            The goal is to promote unity, peace, and youth well-being by creating safe
+            spaces for sports, arts, and cultural activities that bring communities
+            together and support positive youth development.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Who can participate in the program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program is open to youth from both refugee and host communities,
+            including girls and boys. We encourage inclusive participation for all
+            backgrounds and abilities.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How do sports help with peacebuilding in Kalobeyei?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Sports create teamwork and shared goals, helping youth build friendships
+            across communities. This reduces stereotypes, improves communication, and
+            strengthens peaceful coexistence.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What cultural activities does KYIFA support?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We support music, dance, drama, poetry, storytelling, art, and cultural
+            festivals—activities that allow youth to express talent, celebrate identity,
+            and connect across cultures.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program support youth mental health and confidence?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Regular sports and creative expression reduce stress, build self-esteem,
+            encourage discipline, and provide a positive support network—helping youth
+            feel valued and motivated.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program help prevent violence and substance abuse?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            By engaging youth in structured, meaningful activities, the program reduces
+            idleness and negative peer pressure. Mentorship and positive group
+            participation also help youth make healthier choices.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Are girls and young women included in sports activities?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Yes. We actively promote safe and inclusive spaces for girls and young
+            women to participate in sports and cultural activities, build confidence,
+            and develop leadership through teamwork and talent.
+          </div>
+        </div>
+
+
+      <div class="svc-next">
+        <a class="svc-btn" href="services.html#service-eco"
+          >The Eco-Friendly Farming <span>↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="svc-section"
+  id="service-emer"
+  data-title="Humanitarian & Emergency Support"
+>
+  <div class="svc-image">
+    <img src="images/slide2.jpg" alt="" />
+  </div>
+
+  <h2 class="svc-title">Rapid Response, Restoring Hope in Times of Crisis</h2>
+  <p class="svc-text">
+    Communities in Kalobeyei and surrounding areas often face humanitarian
+    challenges such as drought, floods, disease outbreaks, and displacement.
+    During these difficult times, fast and coordinated action is critical.
+    KYIFA’s Humanitarian & Emergency Support program mobilizes trained youth
+    volunteers and partners to deliver life-saving assistance, protect the most
+    vulnerable, and support recovery. Through preparedness, early response, and
+    community-led rebuilding, we help families regain stability, dignity, and
+    resilience after emergencies.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Emergency Relief & Essential Supplies</h4>
+      </div>
+      <p>
+        We coordinate rapid distribution of critical items such as food, safe
+        water, hygiene kits, and basic necessities to families affected by
+        disasters—prioritizing the most vulnerable.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Preparedness & Early Response</h4>
+      </div>
+      <p>
+        The program strengthens community readiness through awareness, basic
+        training, and early warning actions that reduce risks and enable faster,
+        safer responses when emergencies occur.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Recovery & Community Rebuilding</h4>
+      </div>
+      <p>
+        We support post-crisis recovery through community-led rebuilding,
+        restoration of livelihoods, and practical assistance that helps families
+        return to safe and stable living conditions.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Psychosocial Support & Protection</h4>
+      </div>
+      <p>
+        KYIFA promotes emotional well-being and protection by offering basic
+        psychosocial support, safe spaces, and referrals—helping individuals and
+        families cope with stress, loss, and trauma during and after crises.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-title">Common Questions Answered</div>
+
+    <div class="faq-card">
+      <h3>Humanitarian & Emergency Support</h3>
+
+      <div class="acc" data-accordion>
+        <div class="acc-item is-open">
+          <button class="acc-btn" type="button">
+            What is the main goal of the Humanitarian & Emergency Support program?
+            <span class="acc-icon">−</span>
+          </button>
+          <div class="acc-panel">
+            The goal is to deliver timely, life-saving assistance during crises,
+            reduce disaster impacts through preparedness, and support community
+            recovery and resilience after emergencies.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What types of emergencies does KYIFA respond to?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We respond to droughts, floods, disease outbreaks, displacement, and
+            other humanitarian situations that threaten lives, health, and
+            livelihoods in Kalobeyei and nearby areas.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Who receives support during emergencies?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Priority is given to the most vulnerable, including children, women,
+            elderly persons, persons with disabilities, and families severely
+            affected by the crisis.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program prepare communities before disasters?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We provide awareness, basic training, and early warning support so
+            communities understand risks, take preventive actions, and respond
+            quickly and safely when emergencies occur.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What kind of assistance is provided during relief distribution?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Assistance may include food supplies, safe water, hygiene kits,
+            emergency items, and basic support to help families meet urgent needs
+            and stay safe during the crisis.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does KYIFA support recovery after an emergency?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            We support community-led rebuilding, restoration of livelihoods, and
+            practical assistance that helps families recover, regain stability,
+            and rebuild safer living conditions.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What is psychosocial support and why is it important?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Psychosocial support helps individuals cope with stress, fear, and
+            trauma caused by emergencies. It promotes emotional well-being,
+            resilience, and healthy recovery for affected families.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How can community members participate or support this program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Community members can participate as volunteers, support awareness
+            efforts, share early warnings, and collaborate in preparedness and
+            recovery activities that strengthen collective resilience.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What impact does the program aim to achieve?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program aims to save lives, reduce suffering, strengthen
+            preparedness, and support faster recovery—building safer, more
+            resilient communities in the face of future emergencies.
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-next">
+        <a class="svc-btn" href="services.html#service-eco"
+          >The Eco-Friendly Farming <span>↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="svc-section"
+  id="service-peace"
+  data-title="Peace & Conflict Mitigation"
+>
+  <div class="svc-image">
+    <img src="images/slide2.jpg" alt="" />
+  </div>
+
+  <h2 class="svc-title">Building Peace, Strengthening Coexistence</h2>
+  <p class="svc-text">
+    Kalobeyei is home to diverse communities, including refugees and host
+    populations from different cultural and ethnic backgrounds. While diversity
+    is a strength, competition over resources, misunderstandings, and historical
+    tensions can sometimes lead to conflict. KYIFA’s Peace & Conflict Mitigation
+    program empowers youth and communities to prevent violence, resolve disputes
+    peacefully, and promote unity. Through dialogue, education, and collaboration,
+    we strengthen peaceful coexistence and build resilient, harmonious communities.
+  </p>
+
+  <div class="svc-feature-grid">
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">01.</div>
+        <h4>Peace Education & Awareness</h4>
+      </div>
+      <p>
+        We provide education on peaceful coexistence, tolerance, and mutual respect,
+        helping communities understand diversity, reduce prejudice, and prevent
+        conflicts before they arise.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">02.</div>
+        <h4>Conflict Resolution & Mediation</h4>
+      </div>
+      <p>
+        The program promotes community-led mediation and dialogue to address local
+        disputes peacefully, encouraging constructive communication and nonviolent
+        solutions.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">03.</div>
+        <h4>Youth Leadership for Peace</h4>
+      </div>
+      <p>
+        We train youth as peace ambassadors equipped with skills in communication,
+        leadership, and conflict transformation, empowering them to lead positive
+        change within their communities.
+      </p>
+    </div>
+
+    <div class="svc-feature">
+      <div class="svc-feature-head">
+        <div class="svc-num">04.</div>
+        <h4>Community Dialogue & Reconciliation</h4>
+      </div>
+      <p>
+        KYIFA organizes peace dialogues, cultural exchange, and reconciliation
+        activities that bring communities together, rebuild trust, and strengthen
+        unity across diverse groups.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-title">Common Questions Answered</div>
+
+    <div class="faq-card">
+      <h3>Peace & Conflict Mitigation</h3>
+
+      <div class="acc" data-accordion>
+        <div class="acc-item is-open">
+          <button class="acc-btn" type="button">
+            What is the main goal of the Peace & Conflict Mitigation program?
+            <span class="acc-icon">−</span>
+          </button>
+          <div class="acc-panel">
+            The goal is to promote peaceful coexistence, prevent violence, and
+            strengthen unity by empowering communities to resolve conflicts through
+            dialogue, understanding, and nonviolent approaches.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What types of conflicts does the program address?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program addresses community disputes, resource-based conflicts,
+            cultural misunderstandings, and tensions between different groups within
+            Kalobeyei and surrounding areas.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does peace education help prevent conflict?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Peace education promotes respect, tolerance, and understanding of
+            diversity, helping individuals develop positive attitudes and skills to
+            manage disagreements peacefully.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What is community mediation?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Community mediation is a peaceful process where trained individuals help
+            conflicting parties discuss issues openly, understand each other, and
+            reach fair, nonviolent solutions.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Why is youth involvement important in peacebuilding?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Youth are key drivers of change. When empowered with peace and leadership
+            skills, they can influence positive behavior, prevent violence, and
+            promote unity within their communities.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How do peace dialogues strengthen communities?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Peace dialogues create safe spaces for communities to share concerns,
+            build trust, resolve misunderstandings, and work together toward common
+            goals of harmony and coexistence.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            Can community members participate in peace activities?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            Yes. The program encourages participation of youth, elders, women, and
+            community leaders in peace dialogues, mediation training, and unity
+            initiatives.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            What outcomes does KYIFA expect from this program?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            The program aims to reduce conflict, strengthen social cohesion, promote
+            tolerance, and build peaceful, resilient communities where diversity is
+            respected and valued.
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button">
+            How does the program support long-term peace?
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            By promoting continuous dialogue, youth leadership, community
+            collaboration, and conflict resolution skills, the program builds
+            sustainable foundations for long-term peace and stability.
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-next">
+        <a class="svc-btn" href="services.html#service-eco"
+          >The Eco-Friendly Farming <span>↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        </main>
+      </div>
+    </section>
+
+   <footer class="ag-footer" id="agFooter">
+  <!-- Background image (overlayed) -->
+  <div
+    class="ag-footer-bg"
+    style="background-image: url('images/002.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <div class="ag-footer-overlay" aria-hidden="true"></div>
+
+  <div class="ag-footer-wrap">
+    <div class="ag-footer-grid">
+      <!-- LEFT -->
+      <div class="ag-footer-col ag-footer-brand">
+        <div class="ag-footer-logo">
+          <span class="ag-footer-logo-icon">🌿</span>
+          <span class="ag-footer-logo-text">KYIFA</span>
+        </div>
+
+        <div class="ag-footer-contact">
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✳</span>
+            <a href="tel:+254707841370">+254 707 841 370</a>
+          </div>
+
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✉</span>
+            <a href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="ag-footer-quick">
+          <a
+            class="ag-quick-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="ag-quick-ico" aria-hidden="true">💬</span> WhatsApp Us
+          </a>
+
+          <a
+            class="ag-quick-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+          >
+            <span class="ag-quick-ico" aria-hidden="true">✉</span> Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Our Services
+        </h3>
+
+        <ul class="ag-footer-links">
+          <li>
+            <a href="services.html#service-organic"
+              ><span class="ag-link-arrow">↗</span> Agriculture &amp; Livelihood Development</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-digital"
+              ><span class="ag-link-arrow">↗</span> Environmental Protection &amp; Ecosystem Restoration</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-agritech"
+              ><span class="ag-link-arrow">↗</span> Water, Sanitation &amp; Hygiene</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-eco"
+              ><span class="ag-link-arrow">↗</span> Watershed Management &amp; Sanitation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-emer"
+              ><span class="ag-link-arrow">↗</span> Humanitarian Emergency Response</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-peace"
+              ><span class="ag-link-arrow">↗</span> Peace Building &amp; Conflict Mitigation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-sport"
+              ><span class="ag-link-arrow">↗</span> Sports &amp; Cultural Activities</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-produce"
+              ><span class="ag-link-arrow">↗</span> Gender Empowerment</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Sign up to our newsletter
+        </h3>
+
+        <form class="ag-newsletter" onsubmit="return false;">
+          <input class="ag-news-input" type="email" placeholder="Email Address" required />
+          <button class="ag-news-btn" type="submit" aria-label="Send">✈</button>
+        </form>
+
+        <p class="ag-footer-note">
+          Rooted in nature’s care, we grow with integrity, nurture every seed with love,
+          and build stronger, healthier communities in Kalobeyei.
+        </p>
+
+        <div class="ag-social">
+          <!-- WhatsApp -->
+          <a
+            class="ag-social-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+
+          <!-- Email -->
+          <a
+            class="ag-social-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+
+          <!-- Replace these with your real links -->
+          <a
+            class="ag-social-btn"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="ag-social-hint">
+          Tap an icon to message us, email us, or view our pages.
+        </p>
+      </div>
+    </div>
+
+    <div class="ag-footer-divider"></div>
+
+    <div class="ag-footer-bottom">
+      <p>
+        © Copyright 2026. All rights reserved. <span>KYIFA</span>.
+        Designed by <span>CHRIMOTECH</span>
+      </p>
+    </div>
+  </div>
+
+  <button class="ag-to-top" id="agToTop" aria-label="Back to top">↑</button>
+</footer>
+    <script>
+      // --------- show correct service based on hash ----------
+      const heroTitle = document.getElementById("heroTitle");
+      const heroCrumb = document.getElementById("heroCrumb");
+      const sections = Array.from(document.querySelectorAll(".svc-section"));
+      const sideLinks = Array.from(document.querySelectorAll(".svc-side-link"));
+
+      function setActiveService(id) {
+        // default
+        if (!id) id = "service-organic";
+        id = id.replace("#", "");
+
+        // show section
+        sections.forEach((s) => s.classList.toggle("is-active", s.id === id));
+
+        // highlight sidebar
+        sideLinks.forEach((a) =>
+          a.classList.toggle("is-active", a.dataset.service === id),
+        );
+
+        // update hero title/breadcrumb
+        const sec = sections.find((s) => s.id === id);
+        const title = sec
+          ? sec.dataset.title ||
+            sec.querySelector(".svc-title")?.textContent ||
+            "Service"
+          : "Service";
+        heroTitle.textContent = title;
+        heroCrumb.textContent = title;
+
+        // scroll to top of content area (smooth)
+        const active = document.getElementById(id);
+        if (active) {
+          active.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      // initial
+      window.addEventListener("load", () =>
+        setActiveService(location.hash || "#service-organic"),
+      );
+      // on hash change
+      window.addEventListener("hashchange", () =>
+        setActiveService(location.hash),
+      );
+
+      // --------- Accordion (one open at a time) ----------
+      document.querySelectorAll("[data-accordion]").forEach((acc) => {
+        acc.querySelectorAll(".acc-item").forEach((item) => {
+          const btn = item.querySelector(".acc-btn");
+          const icon = item.querySelector(".acc-icon");
+          btn.addEventListener("click", () => {
+            // close others
+            acc.querySelectorAll(".acc-item").forEach((x) => {
+              if (x !== item) {
+                x.classList.remove("is-open");
+                const ic = x.querySelector(".acc-icon");
+                if (ic) ic.textContent = "+";
+              }
+            });
+
+            // toggle current
+            item.classList.toggle("is-open");
+            icon.textContent = item.classList.contains("is-open") ? "−" : "+";
+          });
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

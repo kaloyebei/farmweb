@@ -1,0 +1,1496 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kalobeyei Youth Integrated Farmers Association (KYIFA) — youth-led, community-driven programs in agriculture, environment, WASH, gender, peacebuilding, emergency response, and sports & culture in Turkana West."
+    />
+    <title>KYIFA | About Us</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ===================== THEME TWEAKS (MORE COMPELLING) ===================== */
+      :root {
+        --kyifa-green: #0b3b2a; /* deep green (headings) */
+        --kyifa-olive: #8c8a63; /* olive */
+        --kyifa-lime: #b9e33d; /* lime accent */
+        --kyifa-cream: #f6f2ea; /* warm cream */
+        --kyifa-text: rgba(15, 20, 17, 0.7);
+        --kyifa-text2: rgba(15, 20, 17, 0.62);
+        --kyifa-border: rgba(15, 20, 17, 0.08);
+      }
+
+      /* Make all headings use a new color (instead of black) */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--kyifa-green);
+      }
+
+      /* Add subtle accent underline to key section titles */
+      .team-intro__title,
+      .execTitle,
+      .faqMainTitle {
+        position: relative;
+      }
+      .team-intro__title::after,
+      .execTitle::after,
+      .faqMainTitle::after {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 4px;
+        margin-top: 10px;
+        border-radius: 999px;
+        background: var(--kyifa-lime);
+        opacity: 0.95;
+      }
+
+      /* ===================== NAV (UNCHANGED STRUCTURE) ===================== */
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .nav-dropbtn {
+        cursor: pointer;
+      }
+      .nav-caret {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-left: 6px;
+      }
+
+      .nav-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 10px;
+        display: none;
+        z-index: 9999;
+      }
+
+      .nav-dropdown.is-open .nav-dropdown-panel {
+        display: block;
+      }
+
+      .nav-dropdown-panel::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      .nav-dd-item {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(15, 27, 20, 0.88);
+        font-weight: 650;
+        font-size: 13px;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+      .nav-dd-item:hover {
+        background: rgba(185, 227, 61, 0.22);
+      }
+      .nav-dd-item.is-active {
+        background: var(--kyifa-lime);
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 800;
+      }
+
+      /* ===================== HERO ===================== */
+      .page-header {
+        position: relative;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .page-header-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1900&q=80")
+          center/cover no-repeat;
+        transform: scale(1.03);
+      }
+
+      .page-header-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(7, 35, 25, 0.7);
+      }
+
+      .page-header-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #fff;
+      }
+
+      .page-header-content h1 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 56px);
+        font-weight: 900;
+        color: #fff; /* keep hero title white */
+      }
+
+      .breadcrumbs {
+        margin-top: 10px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* ===================== INTRO ===================== */
+      .team-intro {
+        padding: 70px 18px 30px;
+        background: #fff;
+      }
+
+      .team-intro__card {
+        max-width: 1120px;
+        margin: 0 auto;
+        background: var(--kyifa-cream);
+        border-radius: 22px;
+        padding: 26px;
+        border: 1px solid rgba(15, 20, 17, 0.06);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* subtle highlight strip */
+      .team-intro__card::before {
+        content: "";
+        position: absolute;
+        inset: -60px -60px auto auto;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(185, 227, 61, 0.35), rgba(185, 227, 61, 0));
+        transform: rotate(12deg);
+        pointer-events: none;
+      }
+
+      .team-intro__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+        font-size: 13px;
+        color: rgba(7, 35, 25, 0.92);
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(185, 227, 61, 0.32);
+        border: 1px solid rgba(185, 227, 61, 0.35);
+      }
+
+      .team-intro__badgeIcon {
+        width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--kyifa-lime);
+      }
+
+      .team-intro__grid {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .team-intro__title {
+        margin: 0 0 10px;
+        font-size: 34px;
+        letter-spacing: -0.6px;
+        font-weight: 950;
+        color: var(--kyifa-green);
+      }
+
+      .team-intro__text {
+        margin: 0 0 18px;
+        color: var(--kyifa-text);
+        line-height: 1.85;
+        font-size: 14px;
+        max-width: 760px;
+      }
+
+      /* Mission / Vision */
+      .mvGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 18px 0 16px;
+      }
+      .mvCard {
+        background: #fff;
+        border-radius: 18px;
+        padding: 14px;
+        border: 1px solid var(--kyifa-border);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      }
+      .mvTitle {
+        margin: 0 0 6px;
+        font-size: 14px;
+        font-weight: 950;
+        color: var(--kyifa-green);
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .mvText {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.75;
+        color: rgba(15, 20, 17, 0.68);
+      }
+
+      /* Chips */
+      .team-intro__chips {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .team-chip {
+        background: #fff;
+        border-radius: 16px;
+        padding: 14px 12px;
+        border: 1px solid var(--kyifa-border);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      }
+
+      .team-chip__num {
+        font-weight: 950;
+        font-size: 26px;
+        color: var(--kyifa-green);
+        line-height: 1;
+      }
+
+      .team-chip__label {
+        margin-top: 6px;
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--kyifa-text2);
+      }
+
+      .team-chip--link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      }
+      .team-chip--link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+        border-color: rgba(185, 227, 61, 0.75);
+      }
+
+      .team-chip__labelBig {
+        font-weight: 950;
+        font-size: 18px;
+        color: var(--kyifa-green);
+        line-height: 1.2;
+      }
+
+      /* Right note card */
+      .team-intro__note {
+        height: 100%;
+        background: linear-gradient(180deg, rgba(140, 138, 99, 0.98), rgba(120, 118, 85, 0.98));
+        border-radius: 18px;
+        padding: 18px;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-intro__note::before {
+        content: "";
+        position: absolute;
+        inset: auto -40px -40px auto;
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle, rgba(185, 227, 61, 0.35), rgba(185, 227, 61, 0));
+        transform: rotate(-10deg);
+        pointer-events: none;
+      }
+
+      .team-intro__note h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 950;
+        color: #fff;
+      }
+
+      .team-intro__note ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.9;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      /* ADD: Questions block inside "What we do" card */
+      .noteQBlock {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .noteQTitle {
+        margin: 0 0 10px;
+        font-size: 13px;
+        font-weight: 950;
+        color: rgba(255, 255, 255, 0.95);
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .noteQList {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .noteQItem {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        padding: 10px 12px;
+      }
+      .noteQQ {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 950;
+        color: rgba(255, 255, 255, 0.95);
+      }
+      .noteQA {
+        margin: 6px 0 0;
+        font-size: 12px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .team-intro__btn {
+        margin-top: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        background: var(--kyifa-lime);
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 950;
+        padding: 12px 14px;
+        border-radius: 12px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+        transition: transform 0.14s ease, box-shadow 0.14s ease;
+      }
+      .team-intro__btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+      }
+
+      /* ===================== EXECUTIVE COMMITTEE ===================== */
+      .execSection {
+        padding: 10px 18px 90px;
+        background: #fff;
+      }
+
+      .execWrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        background: var(--kyifa-cream);
+        border-radius: 22px;
+        padding: 26px;
+        border: 1px solid rgba(15, 20, 17, 0.06);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .execWrap::before {
+        content: "";
+        position: absolute;
+        inset: -80px auto auto -80px;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(140, 138, 99, 0.25), rgba(140, 138, 99, 0));
+        pointer-events: none;
+      }
+
+      .execTitle {
+        margin: 0 0 10px;
+        font-size: 30px;
+        font-weight: 950;
+        letter-spacing: -0.6px;
+        color: var(--kyifa-green);
+      }
+
+      .execText {
+        margin: 0 0 18px;
+        color: var(--kyifa-text);
+        line-height: 1.85;
+        font-size: 14px;
+        max-width: 780px;
+      }
+
+      .execGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .execCard {
+        background: #fff;
+        border-radius: 18px;
+        border: 1px solid var(--kyifa-border);
+        padding: 14px;
+        transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      }
+
+      .execCard:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.09);
+        border-color: rgba(185, 227, 61, 0.85);
+      }
+
+      .execAvatar {
+        border-radius: 16px;
+        overflow: hidden;
+        height: 180px;
+        background: rgba(15, 20, 17, 0.06);
+      }
+
+      .execAvatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .execName {
+        margin-top: 12px;
+        font-weight: 950;
+        font-size: 14px;
+        color: var(--kyifa-green);
+      }
+
+      .execRole {
+        margin-top: 4px;
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--kyifa-text2);
+      }
+
+      /* ===================== FAQ ===================== */
+      .faqSection {
+        padding: 70px 18px 90px;
+        background: #fff;
+      }
+
+      .faqMainTitle {
+        text-align: center;
+        font-size: 34px;
+        font-weight: 950;
+        letter-spacing: -0.6px;
+        margin: 0 0 22px;
+        color: var(--kyifa-green);
+      }
+
+      .faqCard {
+        max-width: 820px;
+        margin: 0 auto;
+        background: var(--kyifa-cream);
+        border-radius: 18px;
+        padding: 26px;
+        border: 1px solid rgba(15, 20, 17, 0.06);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.06);
+      }
+
+      .faqCardTitle {
+        margin: 0 0 16px;
+        font-size: 24px;
+        font-weight: 950;
+        color: var(--kyifa-green);
+      }
+
+      .faqItem {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        border: 1px solid var(--kyifa-border);
+        background: #fff;
+      }
+
+      .faqBtn {
+        width: 100%;
+        border: 0;
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        background: var(--kyifa-olive);
+        color: #fff;
+        font-weight: 800;
+        font-size: 13px;
+        text-align: left;
+      }
+
+      .faqQ {
+        display: block;
+        padding-right: 12px;
+        line-height: 1.35;
+      }
+
+      .faqIcon {
+        width: 26px;
+        min-width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        font-weight: 950;
+        font-size: 18px;
+      }
+
+      .faqItem.is-open .faqBtn {
+        background: var(--kyifa-lime);
+        color: rgba(7, 35, 25, 0.95);
+      }
+
+      .faqPanel {
+        height: 0;
+        overflow: hidden;
+        background: #fff;
+        border-top: 1px solid rgba(15, 20, 17, 0.1);
+        transition: height 320ms ease;
+      }
+
+      .faqPanelInner {
+        padding: 14px 16px 16px;
+        color: rgba(15, 20, 17, 0.68);
+        line-height: 1.75;
+        font-size: 13px;
+      }
+
+      .faqFooterLine {
+        margin-top: 26px;
+        border-top: 1px solid rgba(15, 20, 17, 0.14);
+      }
+
+      .faqNextWrap {
+        margin-top: 18px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .faqNextBtn {
+        text-decoration: none;
+        background: var(--kyifa-lime);
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 950;
+        padding: 12px 16px;
+        border-radius: 12px;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+        transition: transform 0.14s ease, box-shadow 0.14s ease;
+      }
+      .faqNextBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+      }
+
+      .faqArrow {
+        font-weight: 950;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .faqPanel {
+          transition: none;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .team-intro__grid {
+          grid-template-columns: 1fr;
+        }
+        .team-intro__chips {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .execGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .mvGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .execGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Small screen: justify text */
+      @media (max-width: 640px) {
+        .team-intro__text,
+        .mvText,
+        .execText,
+        .faqPanelInner,
+        .team-intro__note ul,
+        .noteQA {
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR (UNCHANGED) -->
+  <header class="navBar" id="navBar">
+  <div class="navSection">
+    <!-- Brand (Logo + Name) -->
+    <div class="navBrand">
+      <a href="#" class="brandLink">
+        <img class="brandLogo" src="images/logo.jpeg" alt="KYIFA Logo" />
+        <span class="brandText">
+          <span class="brandTop">Kaloyebei Youth</span>
+          <span class="brandBottom">Integrated Farmers</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Links (DESKTOP) -->
+    <div class="navLinks">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link has-dropdown is-active" href="index.html">Home</a>
+        <a class="nav-link has-dropdown" href="about.html">About Us</a>
+
+        <div class="nav-dropdown" id="servicesMenu">
+          <a
+            class="nav-link has-dropdown nav-dropbtn"
+            href="javascript:void(0)"
+          >
+            Projects <span class="nav-caret">▾</span>
+          </a>
+
+          <div class="nav-dropdown-panel" role="menu" aria-label="Projects menu">
+            <a
+              class="nav-dd-item is-active"
+              href="services.html#service-organic"
+              role="menuitem"
+              >Agriculture & Livelihood Development</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-digital"
+              role="menuitem"
+              >Environmental protection & Eco System Restoration</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-agritech"
+              role="menuitem"
+              >Water Sanitation & Hygiene</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-eco"
+              role="menuitem"
+              >WaterShed Management and Sanitation</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-produce"
+              role="menuitem"
+              >Gender Empowerement</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-emer"
+              role="menuitem"
+              >Humanitarian Emergency Response</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-sport"
+              role="menuitem"
+              >Sports and Cultural activities</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-peace"
+              role="menuitem"
+              >Peace Building and Conflict Mitigation</a
+            >
+          </div>
+        </div>
+
+        <a class="nav-link has-dropdown" href="gallery.html">Gallery</a>
+        <a class="nav-link has-dropdown" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Right actions -->
+    <div class="navActions">
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="icon-btn navToggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <!-- Hamburger icon -->
+        <svg
+          class="icon-hamburger"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <!-- Close (X) icon -->
+        <svg
+          class="icon-close"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Existing search -->
+      <div class="search-wrap">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Search"
+          aria-expanded="false"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm11 3-6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search..." aria-label="Search input" />
+        </div>
+      </div>
+
+      <!-- Existing CTA -->
+      <a href="#" class="cta-btn">
+        Get In Touch <span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <nav class="mobileNav" aria-label="Mobile navigation">
+      <!-- Add .is-active on the current page if you want -->
+      <a class="mobileLink is-active" href="index.html">Home</a>
+      <a class="mobileLink" href="about.html">About Us</a>
+
+      <!-- Projects accordion -->
+      <button
+        class="mobileDropBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileProjectsPanel"
+      >
+        Projects <span class="nav-caret">▾</span>
+      </button>
+
+      <div class="mobileDropPanel" id="mobileProjectsPanel" hidden>
+        <a class="mobileLink" href="services.html#service-organic"
+          >Agriculture & Livelihood Development</a
+        >
+        <a class="mobileLink" href="services.html#service-digital"
+          >Environmental protection & Eco System Restoration</a
+        >
+        <a class="mobileLink" href="services.html#service-agritech"
+          >Water Sanitation & Hygiene</a
+        >
+        <a class="mobileLink" href="services.html#service-eco"
+          >WaterShed Management and Sanitation</a
+        >
+        <a class="mobileLink" href="services.html#service-produce"
+          >Gender Empowerement</a
+        >
+        <a class="mobileLink" href="services.html#service-emer"
+          >Humanitarian Emergency Response</a
+        >
+        <a class="mobileLink" href="services.html#service-sport"
+          >Sports and Cultural activities</a
+        >
+        <a class="mobileLink" href="services.html#service-peace"
+          >Peace Building and Conflict Mitigation</a
+        >
+      </div>
+
+      <a class="mobileLink" href="gallery.html">Gallery</a>
+      <a class="mobileLink" href="contact.html">Contact</a>
+
+      <a class="mobileCta" href="contact.html">
+        Get In Touch <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+    <!-- HERO -->
+    <section class="page-header">
+      <div class="page-header-bg"></div>
+      <div class="page-header-overlay"></div>
+
+      <div class="page-header-content">
+        <h1>About KYIFA</h1>
+        <p class="breadcrumbs">Home › About Us</p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="team-intro">
+      <div class="team-intro__card">
+        <div class="team-intro__top">
+          <span class="team-intro__badge">
+            <span class="team-intro__badgeIcon">🌿</span>
+            Our Community Team
+          </span>
+        </div>
+
+        <div class="team-intro__grid">
+          <div class="team-intro__left">
+            <h2 class="team-intro__title">Meet the People Behind the Mission</h2>
+
+            <p class="team-intro__text">
+              KYIFA is a youth-led, community-driven organization in Kalobeyei, Turkana West,
+              focused on building resilience and long-term opportunity. We strengthen livelihoods
+              through sustainable agriculture, protect the environment, improve water and sanitation,
+              promote gender equality, build peace, support emergency response, and unite communities
+              through sports and culture. We collaborate with local leaders and partners to deliver
+              practical solutions that create meaningful impact.
+            </p>
+
+            <div class="mvGrid">
+              <div class="mvCard">
+                <h3 class="mvTitle">🎯 Mission</h3>
+                <p class="mvText">
+                  To empower youth and communities in Kalobeyei through sustainable programs that
+                  improve livelihoods, protect natural resources, strengthen health and dignity,
+                  and promote peaceful coexistence.
+                </p>
+              </div>
+              <div class="mvCard">
+                <h3 class="mvTitle">🌍 Vision</h3>
+                <p class="mvText">
+                  A resilient, inclusive, and self-reliant Kalobeyei where youth lead positive change,
+                  communities thrive together, and development is sustainable for future generations.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-intro__chips">
+              <a class="team-chip team-chip--link" href="#execCommittee" id="execChip">
+                <div class="team-chip__labelBig">Executive Committee</div>
+                <div class="team-chip__label">Meet our leadership team</div>
+              </a>
+
+              <div class="team-chip">
+                <div class="team-chip__labelBig">Community-Led</div>
+                <div class="team-chip__label">Inclusive participation & ownership</div>
+              </div>
+
+              <div class="team-chip">
+                <div class="team-chip__num" data-count="8">0</div>
+                <div class="team-chip__label">Partner Organizations</div>
+              </div>
+
+              <a class="team-chip team-chip--link" href="javascript:void(0)" id="programsChip">
+                <div class="team-chip__num">8</div>
+                <div class="team-chip__label">Core Programs</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-intro__right">
+            <div class="team-intro__note">
+              <h3>What we do</h3>
+              <ul>
+                <li>Coordinate community-led development initiatives</li>
+                <li>Support training, mentorship, and field programs</li>
+                <li>Work with partners to scale impact</li>
+                <li>Livelihood and income-generating initiatives</li>
+                <li>Partnership and resource mobilisation</li>
+                <li>Research, monitoring, and community assessment</li>
+              </ul>
+
+              <!-- Added: mini Q&A to fill space nicely -->
+              <div class="noteQBlock">
+                <h4 class="noteQTitle">❓ Quick Answers</h4>
+                <ul class="noteQList">
+                  <li class="noteQItem">
+                    <p class="noteQQ">How can I join a KYIFA activity?</p>
+                    <p class="noteQA">
+                      Watch for announcements in the community, ask a KYIFA volunteer, or contact us through the
+                      Contact page to be linked to active programs.
+                    </p>
+                  </li>
+                  <li class="noteQItem">
+                    <p class="noteQQ">Do you work with refugee and host communities?</p>
+                    <p class="noteQA">
+                      Yes. KYIFA promotes inclusive participation and builds bridges through joint activities and shared goals.
+                    </p>
+                  </li>
+                  <li class="noteQItem">
+                    <p class="noteQQ">Can partners support equipment or training?</p>
+                    <p class="noteQA">
+                      Absolutely. We welcome partnerships that strengthen skills, resources, and long-term program impact.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <a class="team-intro__btn" href="contact.html"
+                >Contact Us <span>↗</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE COMMITTEE -->
+    <section class="execSection" id="execCommittee">
+      <div class="execWrap">
+        <h2 class="execTitle">Executive Committee</h2>
+        <p class="execText">
+          Our Executive Committee provides leadership, coordination, and accountability for KYIFA’s
+          community programs. Add images and names below for each official.
+        </p>
+
+        <div class="execGrid">
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Chairperson</div>
+            <div class="execRole">Name Here</div>
+          </div>
+
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Secretary</div>
+            <div class="execRole">Name Here</div>
+          </div>
+
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Treasurer</div>
+            <div class="execRole">Name Here</div>
+          </div>
+
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Programs Lead</div>
+            <div class="execRole">Name Here</div>
+          </div>
+
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Mobilization Lead</div>
+            <div class="execRole">Name Here</div>
+          </div>
+
+          <div class="execCard">
+            <div class="execAvatar">
+              <img src="images/placeholder-person.jpg" alt="" />
+            </div>
+            <div class="execName">Communications Lead</div>
+            <div class="execRole">Name Here</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faqSection">
+      <h2 class="faqMainTitle">Common Questions Answered</h2>
+
+      <div class="faqCard">
+        <h3 class="faqCardTitle">About KYIFA — Common Questions</h3>
+
+        <div class="faqAcc" id="faqAcc">
+          <div class="faqItem is-open">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">What is KYIFA and what do you do in Kalobeyei?</span>
+              <span class="faqIcon" aria-hidden="true">−</span>
+            </button>
+
+            <div class="faqPanel" style="height: auto">
+              <div class="faqPanelInner">
+                KYIFA (Kalobeyei Youth Integrated Farmers Association) is a community-led, youth-driven
+                organization working in Kalobeyei and surrounding areas to strengthen livelihoods,
+                improve health and dignity, protect the environment, and promote peace and social cohesion.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">Who can join or benefit from KYIFA programs?</span>
+              <span class="faqIcon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faqPanel">
+              <div class="faqPanelInner">
+                Our programs are open to youth, women, vulnerable households, and community members
+                across Kalobeyei and nearby areas, including refugee and host communities. Participation
+                depends on the activity and available spaces.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">What are KYIFA’s core programs?</span>
+              <span class="faqIcon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faqPanel">
+              <div class="faqPanelInner">
+                KYIFA runs eight core programs: Agriculture & Livelihood Development; Environmental Protection &
+                Ecosystem Restoration; Water Sanitation & Hygiene; Watershed Management & Sanitation; Gender Empowerment;
+                Humanitarian Emergency Response; Sports & Cultural Activities; and Peacebuilding & Conflict Mitigation.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">How can someone partner with or support KYIFA?</span>
+              <span class="faqIcon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faqPanel">
+              <div class="faqPanelInner">
+                You can support KYIFA through partnerships, donations, training support, equipment contributions,
+                volunteering, and joint community projects. We welcome collaboration with NGOs, institutions,
+                local leaders, and well-wishers.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">Where does KYIFA operate?</span>
+              <span class="faqIcon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faqPanel">
+              <div class="faqPanelInner">
+                KYIFA operates in Kalobeyei and surrounding areas within Turkana West, collaborating with community groups
+                and partners to deliver practical, local solutions that create long-term impact.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem">
+            <button class="faqBtn" type="button">
+              <span class="faqQ">How do you ensure accountability and transparency?</span>
+              <span class="faqIcon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faqPanel">
+              <div class="faqPanelInner">
+                We work through structured community leadership, activity planning, partner coordination, and reporting.
+                We also promote clear communication with stakeholders and responsible use of resources for community benefit.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faqFooterLine"></div>
+
+        <div class="faqNextWrap">
+          <a class="faqNextBtn" href="services.html#service-eco">
+            View Our Projects <span class="faqArrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (UNCHANGED) -->
+  <footer class="ag-footer" id="agFooter">
+  <!-- Background image (overlayed) -->
+  <div
+    class="ag-footer-bg"
+    style="background-image: url('images/002.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <div class="ag-footer-overlay" aria-hidden="true"></div>
+
+  <div class="ag-footer-wrap">
+    <div class="ag-footer-grid">
+      <!-- LEFT -->
+      <div class="ag-footer-col ag-footer-brand">
+        <div class="ag-footer-logo">
+          <span class="ag-footer-logo-icon">🌿</span>
+          <span class="ag-footer-logo-text">KYIFA</span>
+        </div>
+
+        <div class="ag-footer-contact">
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✳</span>
+            <a href="tel:+254707841370">+254 707 841 370</a>
+          </div>
+
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✉</span>
+            <a href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="ag-footer-quick">
+          <a
+            class="ag-quick-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="ag-quick-ico" aria-hidden="true">💬</span> WhatsApp Us
+          </a>
+
+          <a
+            class="ag-quick-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+          >
+            <span class="ag-quick-ico" aria-hidden="true">✉</span> Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Our Services
+        </h3>
+
+        <ul class="ag-footer-links">
+          <li>
+            <a href="services.html#service-organic"
+              ><span class="ag-link-arrow">↗</span> Agriculture &amp; Livelihood Development</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-digital"
+              ><span class="ag-link-arrow">↗</span> Environmental Protection &amp; Ecosystem Restoration</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-agritech"
+              ><span class="ag-link-arrow">↗</span> Water, Sanitation &amp; Hygiene</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-eco"
+              ><span class="ag-link-arrow">↗</span> Watershed Management &amp; Sanitation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-emer"
+              ><span class="ag-link-arrow">↗</span> Humanitarian Emergency Response</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-peace"
+              ><span class="ag-link-arrow">↗</span> Peace Building &amp; Conflict Mitigation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-sport"
+              ><span class="ag-link-arrow">↗</span> Sports &amp; Cultural Activities</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-produce"
+              ><span class="ag-link-arrow">↗</span> Gender Empowerment</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Sign up to our newsletter
+        </h3>
+
+        <form class="ag-newsletter" onsubmit="return false;">
+          <input class="ag-news-input" type="email" placeholder="Email Address" required />
+          <button class="ag-news-btn" type="submit" aria-label="Send">✈</button>
+        </form>
+
+        <p class="ag-footer-note">
+          Rooted in nature’s care, we grow with integrity, nurture every seed with love,
+          and build stronger, healthier communities in Kalobeyei.
+        </p>
+
+        <div class="ag-social">
+          <!-- WhatsApp -->
+          <a
+            class="ag-social-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+
+          <!-- Email -->
+          <a
+            class="ag-social-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+
+          <!-- Replace these with your real links -->
+          <a
+            class="ag-social-btn"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="ag-social-hint">
+          Tap an icon to message us, email us, or view our pages.
+        </p>
+      </div>
+    </div>
+
+    <div class="ag-footer-divider"></div>
+
+    <div class="ag-footer-bottom">
+      <p>
+        © Copyright 2026. All rights reserved. <span>KYIFA</span>.
+        Designed by <span>CHRIMOTECH</span>
+      </p>
+    </div>
+  </div>
+
+  <button class="ag-to-top" id="agToTop" aria-label="Back to top">↑</button>
+</footer>
+
+    <script>
+      /* FAQ accordion */
+      (function () {
+        const acc = document.getElementById("faqAcc");
+        if (!acc) return;
+
+        const items = Array.from(acc.querySelectorAll(".faqItem"));
+
+        function setPanelHeight(panel, open) {
+          if (open) {
+            panel.style.height = panel.scrollHeight + "px";
+            const onEnd = (e) => {
+              if (e.propertyName === "height") {
+                panel.style.height = "auto";
+                panel.removeEventListener("transitionend", onEnd);
+              }
+            };
+            panel.addEventListener("transitionend", onEnd);
+          } else {
+            panel.style.height = panel.scrollHeight + "px";
+            panel.offsetHeight;
+            panel.style.height = "0px";
+          }
+        }
+
+        items.forEach((item) => {
+          const panel = item.querySelector(".faqPanel");
+          const icon = item.querySelector(".faqIcon");
+          const isOpen = item.classList.contains("is-open");
+          icon.textContent = isOpen ? "−" : "+";
+          panel.style.height = isOpen ? "auto" : "0px";
+        });
+
+        items.forEach((item) => {
+          const btn = item.querySelector(".faqBtn");
+          const panel = item.querySelector(".faqPanel");
+          const icon = item.querySelector(".faqIcon");
+
+          btn.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+
+            items.forEach((other) => {
+              if (other === item) return;
+              if (other.classList.contains("is-open")) {
+                other.classList.remove("is-open");
+                other.querySelector(".faqIcon").textContent = "+";
+                setPanelHeight(other.querySelector(".faqPanel"), false);
+              }
+            });
+
+            if (isOpen) {
+              item.classList.remove("is-open");
+              icon.textContent = "+";
+              setPanelHeight(panel, false);
+            } else {
+              item.classList.add("is-open");
+              icon.textContent = "−";
+              if (panel.style.height === "auto") panel.style.height = "0px";
+              setPanelHeight(panel, true);
+            }
+          });
+        });
+      })();
+
+      /* Core Programs opens Projects dropdown; Executive Committee scrolls */
+      (function () {
+        const programsChip = document.getElementById("programsChip");
+        const execChip = document.getElementById("execChip");
+        const servicesMenu = document.getElementById("servicesMenu");
+
+        if (programsChip && servicesMenu) {
+          programsChip.addEventListener("click", () => {
+            servicesMenu.classList.add("is-open");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        if (execChip) {
+          execChip.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.getElementById("execCommittee");
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+
+        document.addEventListener("click", (e) => {
+          if (!servicesMenu) return;
+          const clickedInside = servicesMenu.contains(e.target);
+          if (!clickedInside) servicesMenu.classList.remove("is-open");
+        });
+      })();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

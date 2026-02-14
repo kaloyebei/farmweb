@@ -1,0 +1,2333 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="computing school and computer courses school in western kenya"
+    />
+    <title>HALCHIQ CAR RENTALS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* ---------- HERO ---------- */
+      .pf-hero {
+        position: relative;
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .pf-hero__bg {
+        position: absolute;
+        inset: 0;
+        background-image: url("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.03);
+      }
+
+      .pf-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(7, 35, 25, 0.55),
+          rgba(7, 35, 25, 0.72)
+        );
+      }
+
+      /* tractor on left */
+      .pf-hero__tractor {
+        position: absolute;
+        left: 34px;
+        bottom: -20px;
+        width: 220px;
+        height: auto;
+        filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+        pointer-events: none;
+        user-select: none;
+        z-index: 2;
+      }
+
+      .pf-hero__content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: #fff;
+        padding: 20px 18px;
+      }
+
+      .pf-hero__content h1 {
+        margin: 0;
+        font-size: clamp(34px, 4vw, 56px);
+        font-weight: 900;
+        letter-spacing: -0.6px;
+      }
+
+      .pf-crumbs {
+        margin-top: 10px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .pf-crumbs a {
+        color: #b9e33d;
+        text-decoration: none;
+      }
+      .pf-crumbs a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- GRID SECTION ---------- */
+      .pf-grid-section {
+        background: #fff;
+        padding: 80px 18px 80px;
+      }
+
+      .pf-grid {
+        max-width: 1060px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      /* card */
+      .pf-card {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #eee;
+        height: 300px;
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+      }
+
+      .pf-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+      }
+
+      /* hover overlay (the dark green block) */
+      .pf-hover {
+        position: absolute;
+        inset: 0;
+        background: rgba(7, 35, 25, 0.72);
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 22px;
+      }
+
+      /* actions (two lime squares) */
+      .pf-actions {
+        position: absolute;
+        left: 22px;
+        top: 50%;
+        transform: translateY(-55%);
+        display: flex;
+        gap: 10px;
+
+        opacity: 0;
+        transform-origin: left center;
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+
+      .pf-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        border: 0;
+        cursor: pointer;
+        background: #b9e33d;
+        color: rgba(7, 35, 25, 0.95);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+      }
+
+      .pf-meta {
+        color: #fff;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+
+      .pf-cat {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 6px;
+      }
+
+      .pf-title {
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.15;
+      }
+
+      /* hover behavior */
+      .pf-card:hover .pf-img {
+        transform: scale(1.05);
+      }
+      .pf-card:hover .pf-hover {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pf-card:hover .pf-actions {
+        opacity: 1;
+        transform: translateY(-55%) translateX(0);
+      }
+      .pf-card:hover .pf-meta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* make sure nav can show dropdown */
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+
+      /* wrapper */
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* trigger */
+      .nav-dropbtn {
+        cursor: pointer;
+      }
+      .nav-caret {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-left: 6px;
+      }
+
+      /* panel */
+      .nav-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 10px;
+        display: none;
+        z-index: 9999;
+      }
+
+      /* show */
+      .nav-dropdown.is-open .nav-dropdown-panel {
+        display: block;
+      }
+
+      /* pointer triangle */
+      .nav-dropdown-panel::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      /* items */
+      .nav-dd-item {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(15, 27, 20, 0.88);
+        font-weight: 650;
+        font-size: 13px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .nav-dd-item:hover {
+        background: rgba(185, 227, 61, 0.22);
+      }
+      .nav-dd-item.is-active {
+        background: #b9e33d;
+        color: rgba(7, 35, 25, 0.95);
+        font-weight: 800;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .pf-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .pf-card {
+          height: 280px;
+        }
+        .pf-hero__tractor {
+          width: 180px;
+          left: 18px;
+        }
+      }
+      @media (max-width: 640px) {
+        .pf-grid {
+          grid-template-columns: 1fr;
+        }
+        .pf-card {
+          height: 280px;
+        }
+        .pf-actions {
+          top: 46%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+  <header class="navBar" id="navBar">
+  <div class="navSection">
+    <!-- Brand (Logo + Name) -->
+    <div class="navBrand">
+      <a href="#" class="brandLink">
+        <img class="brandLogo" src="images/logo.jpeg" alt="KYIFA Logo" />
+        <span class="brandText">
+          <span class="brandTop">Kaloyebei Youth</span>
+          <span class="brandBottom">Integrated Farmers</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Links (DESKTOP) -->
+    <div class="navLinks">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link has-dropdown is-active" href="index.html">Home</a>
+        <a class="nav-link has-dropdown" href="about.html">About Us</a>
+
+        <div class="nav-dropdown" id="servicesMenu">
+          <a
+            class="nav-link has-dropdown nav-dropbtn"
+            href="javascript:void(0)"
+          >
+            Projects <span class="nav-caret">▾</span>
+          </a>
+
+          <div class="nav-dropdown-panel" role="menu" aria-label="Projects menu">
+            <a
+              class="nav-dd-item is-active"
+              href="services.html#service-organic"
+              role="menuitem"
+              >Agriculture & Livelihood Development</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-digital"
+              role="menuitem"
+              >Environmental protection & Eco System Restoration</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-agritech"
+              role="menuitem"
+              >Water Sanitation & Hygiene</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-eco"
+              role="menuitem"
+              >WaterShed Management and Sanitation</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-produce"
+              role="menuitem"
+              >Gender Empowerement</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-emer"
+              role="menuitem"
+              >Humanitarian Emergency Response</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-sport"
+              role="menuitem"
+              >Sports and Cultural activities</a
+            >
+            <a
+              class="nav-dd-item"
+              href="services.html#service-peace"
+              role="menuitem"
+              >Peace Building and Conflict Mitigation</a
+            >
+          </div>
+        </div>
+
+        <a class="nav-link has-dropdown" href="gallery.html">Gallery</a>
+        <a class="nav-link has-dropdown" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Right actions -->
+    <div class="navActions">
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="icon-btn navToggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <!-- Hamburger icon -->
+        <svg
+          class="icon-hamburger"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <!-- Close (X) icon -->
+        <svg
+          class="icon-close"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Existing search -->
+      <div class="search-wrap">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Search"
+          aria-expanded="false"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm11 3-6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search..." aria-label="Search input" />
+        </div>
+      </div>
+
+      <!-- Existing CTA -->
+      <a href="#" class="cta-btn">
+        Get In Touch <span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <nav class="mobileNav" aria-label="Mobile navigation">
+      <!-- Add .is-active on the current page if you want -->
+      <a class="mobileLink is-active" href="index.html">Home</a>
+      <a class="mobileLink" href="about.html">About Us</a>
+
+      <!-- Projects accordion -->
+      <button
+        class="mobileDropBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileProjectsPanel"
+      >
+        Projects <span class="nav-caret">▾</span>
+      </button>
+
+      <div class="mobileDropPanel" id="mobileProjectsPanel" hidden>
+        <a class="mobileLink" href="services.html#service-organic"
+          >Agriculture & Livelihood Development</a
+        >
+        <a class="mobileLink" href="services.html#service-digital"
+          >Environmental protection & Eco System Restoration</a
+        >
+        <a class="mobileLink" href="services.html#service-agritech"
+          >Water Sanitation & Hygiene</a
+        >
+        <a class="mobileLink" href="services.html#service-eco"
+          >WaterShed Management and Sanitation</a
+        >
+        <a class="mobileLink" href="services.html#service-produce"
+          >Gender Empowerement</a
+        >
+        <a class="mobileLink" href="services.html#service-emer"
+          >Humanitarian Emergency Response</a
+        >
+        <a class="mobileLink" href="services.html#service-sport"
+          >Sports and Cultural activities</a
+        >
+        <a class="mobileLink" href="services.html#service-peace"
+          >Peace Building and Conflict Mitigation</a
+        >
+      </div>
+
+      <a class="mobileLink" href="gallery.html">Gallery</a>
+      <a class="mobileLink" href="contact.html">Contact</a>
+
+      <a class="mobileCta" href="contact.html">
+        Get In Touch <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+    <!-- ===================== PORTFOLIO HERO ===================== -->
+    <section class="pf-hero">
+      <div class="pf-hero__bg"></div>
+      <div class="pf-hero__overlay"></div>
+
+      <!-- Tractor image on the left (optional like screenshot) -->
+      <img
+        class="pf-hero__tractor"
+        src="https://pngimg.com/uploads/tractor/tractor_PNG16233.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- You can keep your existing navbar above; this is only the hero content -->
+      <div class="pf-hero__content">
+        <h1>Portfolio Grid 3</h1>
+        <div class="pf-crumbs">
+          <a href="#">Home</a>
+          <span>›</span>
+          <span>Portfolio Grid 3</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO GRID ===================== -->
+    <section class="pf-grid-section">
+      <div class="pf-grid">
+        <!-- Card 1 -->
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/000.jpg"
+            alt="Avocados"
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <!-- magnifier -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <!-- chain -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="pf-meta">
+              <div class="pf-cat">Yield</div>
+              <div class="pf-title">Organic Roots, Healthy Fruits</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/001.jpg"
+            alt="Harvest machine"
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="pf-meta">
+              <div class="pf-cat">Precision</div>
+              <div class="pf-title">Nature’s Farm, Pure Harvest</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/002.jpg"
+            alt="Farmer with vegetables"
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="pf-meta">
+              <div class="pf-cat">Organic</div>
+              <div class="pf-title">Life Sprouts From Soil</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add 5 more cards (same structure) -->
+        <!-- Just duplicate .pf-card and change the image + texts -->
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/003.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Harvest</div>
+              <div class="pf-title">Fresh Crops, Better Future</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/004.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Soil</div>
+              <div class="pf-title">Soil Care, Strong Growth</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/005.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Field</div>
+              <div class="pf-title">Green Fields, Great Work</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/006.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/007.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/008.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/009.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/010.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/011.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/012.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/013.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/014.jpg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/21.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/22.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/23.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/24.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/25.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/26.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/27.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/28.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/29.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/30.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/31.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/32.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/33.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/34.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/35.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/36.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/37.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+         <article class="pf-card">
+          <img
+            class="pf-img"
+            src="images/38.jpeg"
+            alt=""
+          />
+          <div class="pf-hover">
+            <div class="pf-actions">
+              <button class="pf-btn" type="button" aria-label="Preview">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16.5 16.5 21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <button class="pf-btn" type="button" aria-label="Open link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 0 0-7.07-7.07L10.5 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.07 0L5.5 12.41a5 5 0 0 0 7.07 7.07L13.5 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="pf-meta">
+              <div class="pf-cat">Farm</div>
+              <div class="pf-title">Harvesting With Heart</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+   
+   <footer class="ag-footer" id="agFooter">
+  <!-- Background image (overlayed) -->
+  <div
+    class="ag-footer-bg"
+    style="background-image: url('images/002.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <div class="ag-footer-overlay" aria-hidden="true"></div>
+
+  <div class="ag-footer-wrap">
+    <div class="ag-footer-grid">
+      <!-- LEFT -->
+      <div class="ag-footer-col ag-footer-brand">
+        <div class="ag-footer-logo">
+          <span class="ag-footer-logo-icon">🌿</span>
+          <span class="ag-footer-logo-text">KYIFA</span>
+        </div>
+
+        <div class="ag-footer-contact">
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✳</span>
+            <a href="tel:+254707841370">+254 707 841 370</a>
+          </div>
+
+          <div class="ag-footer-row">
+            <span class="ag-badge-icon" aria-hidden="true">✉</span>
+            <a href="mailto:kyifacbo2025@gmail.com">kyifacbo2025@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="ag-footer-quick">
+          <a
+            class="ag-quick-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="ag-quick-ico" aria-hidden="true">💬</span> WhatsApp Us
+          </a>
+
+          <a
+            class="ag-quick-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+          >
+            <span class="ag-quick-ico" aria-hidden="true">✉</span> Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Our Services
+        </h3>
+
+        <ul class="ag-footer-links">
+          <li>
+            <a href="services.html#service-organic"
+              ><span class="ag-link-arrow">↗</span> Agriculture &amp; Livelihood Development</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-digital"
+              ><span class="ag-link-arrow">↗</span> Environmental Protection &amp; Ecosystem Restoration</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-agritech"
+              ><span class="ag-link-arrow">↗</span> Water, Sanitation &amp; Hygiene</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-eco"
+              ><span class="ag-link-arrow">↗</span> Watershed Management &amp; Sanitation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-emer"
+              ><span class="ag-link-arrow">↗</span> Humanitarian Emergency Response</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-peace"
+              ><span class="ag-link-arrow">↗</span> Peace Building &amp; Conflict Mitigation</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-sport"
+              ><span class="ag-link-arrow">↗</span> Sports &amp; Cultural Activities</a
+            >
+          </li>
+          <li>
+            <a href="services.html#service-produce"
+              ><span class="ag-link-arrow">↗</span> Gender Empowerment</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="ag-footer-col">
+        <h3 class="ag-footer-title">
+          <span class="ag-title-dot" aria-hidden="true"></span>
+          Sign up to our newsletter
+        </h3>
+
+        <form class="ag-newsletter" onsubmit="return false;">
+          <input class="ag-news-input" type="email" placeholder="Email Address" required />
+          <button class="ag-news-btn" type="submit" aria-label="Send">✈</button>
+        </form>
+
+        <p class="ag-footer-note">
+          Rooted in nature’s care, we grow with integrity, nurture every seed with love,
+          and build stronger, healthier communities in Kalobeyei.
+        </p>
+
+        <div class="ag-social">
+          <!-- WhatsApp -->
+          <a
+            class="ag-social-btn"
+            href="https://wa.me/254707841370?text=Hello%20KYIFA%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+
+          <!-- Email -->
+          <a
+            class="ag-social-btn"
+            href="mailto:kyifacbo2025@gmail.com?subject=Inquiry%20-%20KYIFA&body=Hello%20KYIFA%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20programs.%0A%0AThank%20you."
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+
+          <!-- Replace these with your real links -->
+          <a
+            class="ag-social-btn"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="ag-social-btn"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            title="X"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="ag-social-hint">
+          Tap an icon to message us, email us, or view our pages.
+        </p>
+      </div>
+    </div>
+
+    <div class="ag-footer-divider"></div>
+
+    <div class="ag-footer-bottom">
+      <p>
+        © Copyright 2026. All rights reserved. <span>KYIFA</span>.
+        Designed by <span>CHRIMOTECH</span>
+      </p>
+    </div>
+  </div>
+
+  <button class="ag-to-top" id="agToTop" aria-label="Back to top">↑</button>
+</footer>
+    <script>
+      (function () {
+        const cards = document.querySelectorAll(".pf-card");
+        cards.forEach((card) => {
+          card.addEventListener("click", (e) => {
+            // Prevent clicking buttons from toggling
+            if (e.target.closest(".pf-btn")) return;
+
+            // toggle a class for mobile
+            card.classList.toggle("is-open");
+            cards.forEach((c) => {
+              if (c !== card) c.classList.remove("is-open");
+            });
+          });
+        });
+      })();
+    </script>
+
+    <style>
+      /* mobile open state */
+      .pf-card.is-open .pf-hover {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pf-card.is-open .pf-actions {
+        opacity: 1;
+      }
+      .pf-card.is-open .pf-meta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script src="script.js"></script>
+  </body>
+</html>
