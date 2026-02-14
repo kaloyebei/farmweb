@@ -1735,7 +1735,7 @@ body {
   display: flex;
   align-items: center;
 
-  background-image: url("images/0w.jpeg");
+  background-image: url("0w.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1962,7 +1962,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("images/img2.png"); /* <-- change this */
+  background-image: url("img2.png"); /* <-- change this */
   background-size: cover;
   background-position: center;
   transform: scale(1.03);
@@ -4130,3 +4130,4 @@ img { max-width: 100%; height: auto; display: block; }
   .seeds-wheat{ width: 120px; opacity: .18; }
   .seeds-title, .news-title{ font-size: 22px; }
 }
+
